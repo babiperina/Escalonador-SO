@@ -13,6 +13,7 @@ import model.LtgProcesso;
 import model.RrProcesso;
 import model.SjfProcesso;
 import util.Config;
+import view.Processo;
 
 import java.util.ArrayList;
 
@@ -86,16 +87,7 @@ public class EscalonadorSceneController {
         coresSjfVbox.getChildren().clear();
         for (int i = 0; i < coresSjf.length; i++) {
             if (coresSjf[i] != null) {
-                hbox = new HBox();
-                hbox.getChildren().add(new Label(coresSjf[i].toString()));
-
-                if (i % 2 == 0)
-                    hbox.setBackground(new Background(new BackgroundFill(Color.web("#dfe2dc"), CornerRadii.EMPTY, Insets.EMPTY)));
-                else
-                    hbox.setBackground(new Background(new BackgroundFill(Color.web("#b4b5b3"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-                hbox.prefWidth(Control.USE_COMPUTED_SIZE);
-                coresSjfVbox.getChildren().add(hbox);
+                coresSjfVbox.getChildren().add(Processo.display(coresSjf[i], i));
             } else {
                 hbox = new HBox();
                 hbox.getChildren().add(new Label("Core " + (i + 1) + " vazio."));
@@ -112,35 +104,14 @@ public class EscalonadorSceneController {
 
         aptosSjfVbox.getChildren().clear();
         for (int i = 0; i < aptosSjf.size(); i++) {
-
-            hbox = new HBox();
-            hbox.getChildren().add(new Label(aptosSjf.get(i).toString()));
-
-            if (i % 2 == 0)
-                hbox.setBackground(new Background(new BackgroundFill(Color.web("#dfe2dc"), CornerRadii.EMPTY, Insets.EMPTY)));
-            else
-                hbox.setBackground(new Background(new BackgroundFill(Color.web("#b4b5b3"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-            hbox.prefWidth(Control.USE_COMPUTED_SIZE);
-
-            aptosSjfVbox.getChildren().add(hbox);
+            aptosSjfVbox.getChildren().add(Processo.display(aptosSjf.get(i), i));
+            aptosSjf.get(i).setNovo(false);
         }
 
         finalizadosSjfVbox.getChildren().clear();
         for (int i = 0; i < finalizadosSjf.size(); i++) {
-
-            hbox = new HBox();
-            hbox.getChildren().add(new Label(finalizadosSjf.get(i).toString()));
-
-            if (i % 2 == 0)
-                hbox.setBackground(new Background(new BackgroundFill(Color.web("#dfe2dc"), CornerRadii.EMPTY, Insets.EMPTY)));
-            else
-                hbox.setBackground(new Background(new BackgroundFill(Color.web("#b4b5b3"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-            hbox.prefWidth(Control.USE_COMPUTED_SIZE);
-
-
-            finalizadosSjfVbox.getChildren().add(hbox);
+            finalizadosSjfVbox.getChildren().add(Processo.display(finalizadosSjf.get(i), i));
+            finalizadosSjf.get(i).setNovo(false);
         }
     }
 

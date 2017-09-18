@@ -137,11 +137,7 @@
                            <content>
                               <ScrollPane>
                                  <content>
-                                    <VBox fx:id="aptosSjfVbox">
-                                       <padding>
-                                          <Insets left="5.0" />
-                                       </padding>
-                                    </VBox>
+                                    <VBox fx:id="aptosSjfVbox" />
                                  </content>
                               </ScrollPane>
                            </content>
@@ -150,11 +146,7 @@
                            <content>
                               <ScrollPane>
                                  <content>
-                                    <VBox fx:id="finalizadosSjfVbox">
-                                       <padding>
-                                          <Insets left="5.0" />
-                                       </padding>
-                                    </VBox>
+                                    <VBox fx:id="finalizadosSjfVbox" />
                                  </content>
                               </ScrollPane>
                            </content>

@@ -11,12 +11,14 @@ public abstract class BaseProcesso {
     protected Integer duracao;
     protected Integer tempoRestante;
     protected int estado;
+    protected boolean isNovo;
 
     public BaseProcesso() {
         setId();
         setDuracao();
         setTempoRestante();
         setEstado(this.estado = Estado.APTO.getValor());
+        this.isNovo = true;
     }
 
     public int getId() {
@@ -51,5 +53,13 @@ public abstract class BaseProcesso {
 
     public void setEstado(int estado) {
         this.estado = estado;
+    }
+
+    public boolean isNovo() {
+        return isNovo;
+    }
+
+    public void setNovo(boolean novo) {
+        isNovo = novo;
     }
 }
