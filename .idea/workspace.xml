@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" afterPath="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/SjfProcesso.java" afterPath="$PROJECT_DIR$/src/model/SjfProcesso.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/algoritmos/Ltg.java" afterPath="$PROJECT_DIR$/src/controller/algoritmos/Ltg.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/algoritmos/Rr.java" afterPath="$PROJECT_DIR$/src/controller/algoritmos/Rr.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Config.java" afterPath="$PROJECT_DIR$/src/util/Config.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/escalonadorscene.fxml" afterPath="$PROJECT_DIR$/src/view/escalonadorscene.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -68,117 +69,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/Config.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sjf.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/algoritmos/Sjf.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#atualizarAlgoritmo#0;class#Sjf#0" expanded="false" />
-                <element signature="e#3160#3161#0" expanded="true" />
-                <element signature="e#3188#3189#0" expanded="true" />
-                <element signature="e#3236#3237#0" expanded="true" />
-                <element signature="e#3264#3265#0" expanded="true" />
-                <element signature="e#3318#3319#0" expanded="true" />
-                <element signature="e#3352#3353#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EscalonadorSceneController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EscalonadorSceneController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="154" column="23" lean-forward="false" selection-start-line="154" selection-start-column="23" selection-end-line="154" selection-end-column="23" />
+            <state relative-caret-position="76">
+              <caret line="281" column="0" lean-forward="false" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3180#3181#0" expanded="true" />
-                <element signature="e#3236#3237#0" expanded="true" />
-                <element signature="e#6171#6172#0" expanded="true" />
-                <element signature="e#6227#6228#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="17" column="49" lean-forward="false" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="escalonadorscene.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/escalonadorscene.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1186">
-              <caret line="127" column="42" lean-forward="false" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
-              <folding>
-                <marker date="1505765300000" expanded="true" signature="8037:8258" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="8088:8208" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="8546:14989" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="8596:14975" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="8616:14954" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="8687:10865" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="8712:10865" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="8741:10865" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="8781:8918" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="8955:9275" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="9307:10865" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="9411:9598" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="9448:9598" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="9491:9598" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="9534:9598" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="14462:14657" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="14603:14627" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="14735:14933" ph="..." />
-                <marker date="1505765300000" expanded="true" signature="14765:14903" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SjfProcesso.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/SjfProcesso.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseProcesso.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/bases/BaseProcesso.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1021#1022#0" expanded="true" />
-                <element signature="e#1057#1058#0" expanded="true" />
+                <element signature="method#iniciarSjf#0;class#EscalonadorSceneController#0" expanded="false" />
+                <element signature="method#atualizarInterfaceSjf#0;class#EscalonadorSceneController#0" expanded="false" />
+                <element signature="method#verificarStatusBotaoIniciar#0;class#EscalonadorSceneController#0" expanded="false" />
+                <element signature="method#iniciarLtg#0;class#EscalonadorSceneController#0" expanded="false" />
+                <element signature="method#atualizarInterfaceLtg#0;class#EscalonadorSceneController#0" expanded="false" />
+                <element signature="method#verificarStatusBotaoIniciarLtg#0;class#EscalonadorSceneController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -187,9 +90,36 @@
       <file leaf-file-name="Rr.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/algoritmos/Rr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-              <folding />
+            <state relative-caret-position="411">
+              <caret line="38" column="49" lean-forward="false" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#6264#6265#0" expanded="true" />
+                <element signature="e#6292#6293#0" expanded="true" />
+                <element signature="e#6560#6561#0" expanded="true" />
+                <element signature="e#6585#6586#0" expanded="true" />
+                <element signature="e#6629#6630#0" expanded="true" />
+                <element signature="e#6654#6655#0" expanded="true" />
+                <element signature="e#6698#6699#0" expanded="true" />
+                <element signature="e#6723#6724#0" expanded="true" />
+                <element signature="e#6767#6768#0" expanded="true" />
+                <element signature="e#6792#6793#0" expanded="true" />
+                <element signature="e#6845#6846#0" expanded="true" />
+                <element signature="e#6879#6880#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sjf.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/algoritmos/Sjf.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#atualizarAlgoritmo#0;class#Sjf#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -197,18 +127,21 @@
       <file leaf-file-name="Ltg.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/algoritmos/Ltg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="125" column="37" lean-forward="false" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
+            <state relative-caret-position="258">
+              <caret line="112" column="27" lean-forward="false" selection-start-line="112" selection-start-column="27" selection-end-line="112" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3994#3995#0" expanded="true" />
-                <element signature="e#4042#4043#0" expanded="true" />
-                <element signature="e#4070#4071#0" expanded="true" />
-                <element signature="e#4124#4125#0" expanded="true" />
-                <element signature="e#4158#4159#0" expanded="true" />
-                <element signature="e#4210#4211#0" expanded="true" />
-                <element signature="e#4242#4243#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -248,10 +181,11 @@
         <option value="$PROJECT_DIR$/src/view/escalonadorscene.fxml" />
         <option value="$PROJECT_DIR$/src/controller/algoritmos/Sjf.java" />
         <option value="$PROJECT_DIR$/src/application/Main.java" />
+        <option value="$PROJECT_DIR$/src/model/SjfProcesso.java" />
         <option value="$PROJECT_DIR$/src/util/Config.java" />
         <option value="$PROJECT_DIR$/src/controller/algoritmos/Ltg.java" />
+        <option value="$PROJECT_DIR$/src/controller/algoritmos/Rr.java" />
         <option value="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" />
-        <option value="$PROJECT_DIR$/src/model/SjfProcesso.java" />
       </list>
     </option>
   </component>
@@ -536,6 +470,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="705" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -545,12 +480,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.59241706" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5592417" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -579,7 +514,17 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java</url>
+          <line>146</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -694,14 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/algoritmos/Rr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/bases/BaseProcesso.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -710,37 +647,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1021#1022#0" expanded="true" />
             <element signature="e#1057#1058#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/escalonadorscene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1186">
-          <caret line="127" column="42" lean-forward="false" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
-          <folding>
-            <marker date="1505765300000" expanded="true" signature="8037:8258" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="8088:8208" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="8546:14989" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="8596:14975" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="8616:14954" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="8687:10865" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="8712:10865" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="8741:10865" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="8781:8918" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="8955:9275" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="9307:10865" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="9411:9598" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="9448:9598" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="9491:9598" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="9534:9598" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="14462:14657" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="14603:14627" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="14735:14933" ph="..." />
-            <marker date="1505765300000" expanded="true" signature="14765:14903" ph="..." />
           </folding>
         </state>
       </provider>
@@ -755,14 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/LtgProcesso.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -773,60 +671,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/algoritmos/Ltg.java">
+    <entry file="file://$PROJECT_DIR$/src/model/SjfProcesso.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="125" column="37" lean-forward="false" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
+        <state relative-caret-position="315">
+          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3994#3995#0" expanded="true" />
-            <element signature="e#4042#4043#0" expanded="true" />
-            <element signature="e#4070#4071#0" expanded="true" />
-            <element signature="e#4124#4125#0" expanded="true" />
-            <element signature="e#4158#4159#0" expanded="true" />
-            <element signature="e#4210#4211#0" expanded="true" />
-            <element signature="e#4242#4243#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/escalonadorscene.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1186">
+          <caret line="127" column="42" lean-forward="false" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/algoritmos/Sjf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#atualizarAlgoritmo#0;class#Sjf#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/algoritmos/Ltg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="112" column="27" lean-forward="false" selection-start-line="112" selection-start-column="27" selection-end-line="112" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/algoritmos/Rr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="38" column="49" lean-forward="false" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6264#6265#0" expanded="true" />
+            <element signature="e#6292#6293#0" expanded="true" />
+            <element signature="e#6560#6561#0" expanded="true" />
+            <element signature="e#6585#6586#0" expanded="true" />
+            <element signature="e#6629#6630#0" expanded="true" />
+            <element signature="e#6654#6655#0" expanded="true" />
+            <element signature="e#6698#6699#0" expanded="true" />
+            <element signature="e#6723#6724#0" expanded="true" />
+            <element signature="e#6767#6768#0" expanded="true" />
+            <element signature="e#6792#6793#0" expanded="true" />
+            <element signature="e#6845#6846#0" expanded="true" />
+            <element signature="e#6879#6880#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="154" column="23" lean-forward="false" selection-start-line="154" selection-start-column="23" selection-end-line="154" selection-end-column="23" />
+        <state relative-caret-position="76">
+          <caret line="281" column="0" lean-forward="false" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3180#3181#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#6171#6172#0" expanded="true" />
-            <element signature="e#6227#6228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/algoritmos/Sjf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#atualizarAlgoritmo#0;class#Sjf#0" expanded="false" />
-            <element signature="e#3160#3161#0" expanded="true" />
-            <element signature="e#3188#3189#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3264#3265#0" expanded="true" />
-            <element signature="e#3318#3319#0" expanded="true" />
-            <element signature="e#3352#3353#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/SjfProcesso.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#iniciarSjf#0;class#EscalonadorSceneController#0" expanded="false" />
+            <element signature="method#atualizarInterfaceSjf#0;class#EscalonadorSceneController#0" expanded="false" />
+            <element signature="method#verificarStatusBotaoIniciar#0;class#EscalonadorSceneController#0" expanded="false" />
+            <element signature="method#iniciarLtg#0;class#EscalonadorSceneController#0" expanded="false" />
+            <element signature="method#atualizarInterfaceLtg#0;class#EscalonadorSceneController#0" expanded="false" />
+            <element signature="method#verificarStatusBotaoIniciarLtg#0;class#EscalonadorSceneController#0" expanded="false" />
           </folding>
         </state>
       </provider>

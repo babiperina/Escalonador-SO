@@ -6,4 +6,6 @@ public class Config {
 
     public static boolean SJF_IS_RUNNING = false;
     public static boolean LTG_IS_RUNNING = false;
+    public static boolean RR_IS_RUNNING = false;
+
 }

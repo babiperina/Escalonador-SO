@@ -1,27 +1,21 @@
 package controller;
 
 import controller.algoritmos.Ltg;
+import controller.algoritmos.Rr;
 import controller.algoritmos.Sjf;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TitledPane;
 import javafx.scene.layout.VBox;
 import model.LtgProcesso;
+import model.RrProcesso;
 import model.SjfProcesso;
-import model.enums.Estado;
 import util.Config;
 
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
 
 
 public class EscalonadorSceneController {
@@ -49,10 +43,14 @@ public class EscalonadorSceneController {
     @FXML
     VBox finalizadosSjfVbox;
 
+    @FXML
+    TitledPane paneSjf;
+
 
     public void iniciarSjf() {
 
         iniciarSjfButton.setDisable(true);
+        paneSjf.setExpanded(true);
         addProcessoSjfButton.setDisable(false);
         sjf = new Sjf((int) coresSjfSlider.getValue(), (int) piSjfSlider.getValue());
 
@@ -141,10 +139,13 @@ public class EscalonadorSceneController {
     @FXML
     VBox abortadosLtgVbox;
 
+    @FXML
+    TitledPane paneLtg;
 
     public void iniciarLtg() {
 
         iniciarLtgButton.setDisable(true);
+        paneLtg.setExpanded(true);
         addProcessoLtgButton.setDisable(false);
         ltg = new Ltg((int) coresLtgSlider.getValue(), (int) piLtgSlider.getValue());
 
@@ -211,4 +212,101 @@ public class EscalonadorSceneController {
         if (!Config.LTG_IS_RUNNING)
             iniciarLtgButton.setDisable(false);
     }
+
+
+    //RR Algoritmo
+    private Rr rr;
+    private RrProcesso[] coresRr;
+    private ArrayList<RrProcesso> aptosRr;
+    private ArrayList<RrProcesso> finalizadosRr;
+    private ArrayList<RrProcesso> abortadosRr;
+
+
+    @FXML
+    Slider coresRrSlider;
+    @FXML
+    Slider piRrSlider;
+    @FXML
+    Slider quantumRrSlider;
+    @FXML
+    Button iniciarRrButton;
+    @FXML
+    Button addProcessoRrButton;
+
+    @FXML
+    VBox coresRrVbox;
+    @FXML
+    VBox aptosRrVbox;
+    @FXML
+    VBox finalizadosRrVbox;
+
+    @FXML
+    TitledPane paneRr;
+
+    public void iniciarRr() {
+
+        iniciarRrButton.setDisable(true);
+        paneRr.setExpanded(true);
+        addProcessoRrButton.setDisable(false);
+        rr = new Rr((int) coresRrSlider.getValue(), (int) piRrSlider.getValue(), (int) quantumRrSlider.getValue());
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (Config.RR_IS_RUNNING) {
+                    rr.atualizarAlgoritmo();
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            coresRr = rr.getCores();
+                            aptosRr = rr.getAptos();
+                            finalizadosRr = rr.getFinalizados();
+                            atualizarInterfaceRr();
+                        }
+                    });
+                    verificarStatusBotaoIniciarRr();
+                }
+            }
+        });
+
+        thread.start();
+
+    }
+
+    private void atualizarInterfaceRr() {
+        coresRrVbox.getChildren().clear();
+        for (int i = 0; i < coresRr.length; i++) {
+            if (coresRr[i] != null) {
+                coresRrVbox.getChildren().add(new Label(coresRr[i].toString()));
+            } else {
+                coresRrVbox.getChildren().add(new Label("Core " + (i + 1) + " vazio."));
+            }
+        }
+
+        aptosRrVbox.getChildren().clear();
+        for (int i = 0; i < aptosRr.size(); i++) {
+            aptosRrVbox.getChildren().add(new Label(aptosRr.get(i).toString()));
+        }
+
+        finalizadosRrVbox.getChildren().clear();
+        for (int i = 0; i < finalizadosRr.size(); i++) {
+            finalizadosRrVbox.getChildren().add(new Label(finalizadosRr.get(i).toString()));
+        }
+    }
+
+    public void adicionarProcessoAptosRr() {
+        rr.adicionarProcesso(new RrProcesso());
+    }
+
+    private void verificarStatusBotaoIniciarRr() {
+        if (!Config.LTG_IS_RUNNING)
+            iniciarLtgButton.setDisable(false);
+    }
+
+
 }

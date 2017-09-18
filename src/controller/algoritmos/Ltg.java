@@ -1,6 +1,5 @@
 package controller.algoritmos;
 
-import com.sun.org.apache.xpath.internal.operations.Lt;
 import model.LtgProcesso;
 import model.enums.Estado;
 import util.Config;

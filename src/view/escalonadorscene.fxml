@@ -10,7 +10,7 @@
     <bottom>
         <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
             <children>
-                <Label text="Desenvolvido por Bárbara Perina." />
+                <Label fx:id="creditos" text="Desenvolvido por Bárbara Perina." />
             </children>
             <BorderPane.margin>
                 <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
@@ -55,12 +55,12 @@
                                         <Slider fx:id="coresRrSlider" blockIncrement="1.0" layoutX="30.0" layoutY="40.0" majorTickUnit="5.0" max="64.0" min="1.0" showTickLabels="true" showTickMarks="true" value="1.0" />
                                         <Label layoutX="34.0" layoutY="80.0" text="PROCESSOS INICIAIS" />
                                         <Slider fx:id="piRrSlider" blockIncrement="5.0" layoutX="30.0" layoutY="98.0" majorTickUnit="30.0" max="300.0" min="1.0" showTickLabels="true" showTickMarks="true" value="1.0" />
-                                        <Button fx:id="addProcessoRrButton" disable="true" layoutX="33.0" layoutY="253.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="134.0" text="ADICIONAR PROCESSO">
+                                        <Button fx:id="addProcessoRrButton" disable="true" layoutX="33.0" layoutY="253.0" mnemonicParsing="false" onAction="#adicionarProcessoAptosRr" prefHeight="27.0" prefWidth="134.0" text="ADICIONAR PROCESSO">
                                             <font>
                                                 <Font size="9.0" />
                                             </font>
                                         </Button>
-                                        <Button fx:id="iniciarRrButton" defaultButton="true" layoutX="33.0" layoutY="216.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="134.0" text="INICIAR" />
+                                        <Button fx:id="iniciarRrButton" defaultButton="true" layoutX="33.0" layoutY="216.0" mnemonicParsing="false" onAction="#iniciarRr" prefHeight="27.0" prefWidth="134.0" text="INICIAR" />
                                         <Label layoutX="67.0" layoutY="137.0" text="QUANTUM" />
                                         <Slider fx:id="quantumRrSlider" blockIncrement="1.0" layoutX="31.0" layoutY="152.0" majorTickUnit="5.0" max="20.0" min="2.0" minorTickCount="4" showTickLabels="true" showTickMarks="true" value="1.0" />
                                     </children>
@@ -167,9 +167,59 @@
                </content>
                 </TitledPane>
                 <TitledPane fx:id="paneRr" text="ROUND ROBIN">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
+               <content>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TitledPane animated="false" maxHeight="200.0" prefHeight="200.0" text="CORES">
+                           <content>
+                              <ScrollPane>
+                                 <content>
+                                    <VBox fx:id="coresRrVbox">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" maxHeight="200.0" prefHeight="200.0" text="APTOS" GridPane.rowIndex="1">
+                           <content>
+                              <ScrollPane>
+                                 <content>
+                                    <VBox fx:id="aptosRrVbox">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" maxHeight="200.0" prefHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
+                           <content>
+                              <ScrollPane>
+                                 <content>
+                                    <VBox fx:id="finalizadosRrVbox">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </TitledPane>
+                     </children>
+                  </GridPane>
+               </content>
                 </TitledPane>
                 <TitledPane fx:id="paneLtg" layoutX="10.0" layoutY="64.0" text="LEAST TIME TO GO">
                <content>
