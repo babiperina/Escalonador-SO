@@ -115,100 +115,100 @@ public class EscalonadorSceneController {
     }
 
 
-//    //LTG Algoritmo
-//    private Ltg ltg;
-//    private LtgProcesso[] coresLtg;
-//    private ArrayList<LtgProcesso> aptosLtg;
-//    private ArrayList<LtgProcesso> finalizadosLtg;
-//    private ArrayList<LtgProcesso> abortadosLtg;
-//
-//
-//    @FXML
-//    Slider coresLtgSlider;
-//    @FXML
-//    Slider piLtgSlider;
-//    @FXML
-//    Button iniciarLtgButton;
-//    @FXML
-//    Button addProcessoLtgButton;
-//
-//    @FXML
-//    VBox coresLtgVbox;
-//    @FXML
-//    VBox aptosLtgVbox;
-//    @FXML
-//    VBox finalizadosLtgVbox;
-//    @FXML
-//    VBox abortadosLtgVbox;
-//
-//
-//    public void iniciarLtg() {
-//
-//        iniciarLtgButton.setDisable(true);
-//        addProcessoLtgButton.setDisable(false);
-//        ltg = new Ltg((int) coresLtgSlider.getValue(), (int) piLtgSlider.getValue());
-//
-//        Thread thread = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                while (Config.LTG_IS_RUNNING) {
-//                    sjf.atualizarAlgoritmo();
-//                    try {
-//                        Thread.sleep(500);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                    Platform.runLater(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            coresLtg = ltg.getCores();
-//                            aptosLtg = ltg.getAptos();
-//                            finalizadosLtg = ltg.getFinalizados();
-//                            abortadosLtg = ltg.getAbortados();
-//                            atualizarInterfaceLtg();
-//                        }
-//                    });
-//                    verificarStatusBotaoIniciarLtg();
-//                }
-//            }
-//        });
-//
-//        thread.start();
-//
-//    }
-//
-//    private void atualizarInterfaceLtg() {
-//            coresLtgVbox.getChildren().clear();
-//        for (int i = 0; i < coresLtg.length; i++) {
-//            if (coresLtg[i] != null) {
-//                coresLtgVbox.getChildren().add(new Label(coresLtg[i].toString()));
-//            } else {
-//                coresLtgVbox.getChildren().add(new Label("Core " + (i + 1) + " vazio."));
-//            }
-//        }
-//
-//        aptosLtgVbox.getChildren().clear();
-//        for (int i = 0; i < aptosLtg.size(); i++) {
-//            aptosLtgVbox.getChildren().add(new Label(aptosLtg.get(i).toString()));
-//        }
-//
-//        finalizadosLtgVbox.getChildren().clear();
-//        for (int i = 0; i < finalizadosLtg.size(); i++) {
-//            finalizadosLtgVbox.getChildren().add(new Label(finalizadosLtg.get(i).toString()));
-//        }
-//
-//        abortadosLtgVbox.getChildren().clear();
-//        for (int i = 0; i < abortadosLtg.size(); i++) {
-//            abortadosLtgVbox.getChildren().add(new Label(abortadosLtg.get(i).toString()));
-//        }
-//    }
-//
-//    public void adicionarProcessoAptosLtg() {
-//        ltg.adicionarProcesso(new LtgProcesso());
-//    }
-//
-//    private void verificarStatusBotaoIniciarLtg() {
-//        if (!Config.LTG_IS_RUNNING)
-//            iniciarLtgButton.setDisable(false);
-//    }
+    //LTG Algoritmo
+    private Ltg ltg;
+    private LtgProcesso[] coresLtg;
+    private ArrayList<LtgProcesso> aptosLtg;
+    private ArrayList<LtgProcesso> finalizadosLtg;
+    private ArrayList<LtgProcesso> abortadosLtg;
+
+
+    @FXML
+    Slider coresLtgSlider;
+    @FXML
+    Slider piLtgSlider;
+    @FXML
+    Button iniciarLtgButton;
+    @FXML
+    Button addProcessoLtgButton;
+
+    @FXML
+    VBox coresLtgVbox;
+    @FXML
+    VBox aptosLtgVbox;
+    @FXML
+    VBox finalizadosLtgVbox;
+    @FXML
+    VBox abortadosLtgVbox;
+
+
+    public void iniciarLtg() {
+
+        iniciarLtgButton.setDisable(true);
+        addProcessoLtgButton.setDisable(false);
+        ltg = new Ltg((int) coresLtgSlider.getValue(), (int) piLtgSlider.getValue());
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (Config.LTG_IS_RUNNING) {
+                    ltg.atualizarAlgoritmo();
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            coresLtg = ltg.getCores();
+                            aptosLtg = ltg.getAptos();
+                            finalizadosLtg = ltg.getFinalizados();
+                            abortadosLtg = ltg.getAbortados();
+                            atualizarInterfaceLtg();
+                        }
+                    });
+                    verificarStatusBotaoIniciarLtg();
+                }
+            }
+        });
+
+        thread.start();
+
+    }
+
+    private void atualizarInterfaceLtg() {
+            coresLtgVbox.getChildren().clear();
+        for (int i = 0; i < coresLtg.length; i++) {
+            if (coresLtg[i] != null) {
+                coresLtgVbox.getChildren().add(new Label(coresLtg[i].toString()));
+            } else {
+                coresLtgVbox.getChildren().add(new Label("Core " + (i + 1) + " vazio."));
+            }
+        }
+
+        aptosLtgVbox.getChildren().clear();
+        for (int i = 0; i < aptosLtg.size(); i++) {
+            aptosLtgVbox.getChildren().add(new Label(aptosLtg.get(i).toString()));
+        }
+
+        finalizadosLtgVbox.getChildren().clear();
+        for (int i = 0; i < finalizadosLtg.size(); i++) {
+            finalizadosLtgVbox.getChildren().add(new Label(finalizadosLtg.get(i).toString()));
+        }
+
+        abortadosLtgVbox.getChildren().clear();
+        for (int i = 0; i < abortadosLtg.size(); i++) {
+            abortadosLtgVbox.getChildren().add(new Label(abortadosLtg.get(i).toString()));
+        }
+    }
+
+    public void adicionarProcessoAptosLtg() {
+        ltg.adicionarProcesso(new LtgProcesso());
+    }
+
+    private void verificarStatusBotaoIniciarLtg() {
+        if (!Config.LTG_IS_RUNNING)
+            iniciarLtgButton.setDisable(false);
+    }
 }

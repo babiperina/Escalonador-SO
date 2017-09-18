@@ -151,7 +151,7 @@
                         </TitledPane>
                         <TitledPane animated="false" maxHeight="200.0" prefHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
                            <content>
-                              <ScrollPane maxHeight="300.0">
+                              <ScrollPane>
                                  <content>
                                     <VBox fx:id="finalizadosSjfVbox">
                                        <padding>
@@ -184,24 +184,40 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TitledPane maxHeight="200.0" text="CORES">
+                        <TitledPane maxHeight="200.0" prefHeight="200.0" text="CORES">
                            <content>
-                              <VBox fx:id="coresLtgVbox" />
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                 <content>
+                                    <VBox fx:id="coresLtgVbox" />
+                                 </content>
+                              </ScrollPane>
                            </content>
                         </TitledPane>
-                        <TitledPane maxHeight="200.0" text="APTOS" GridPane.rowIndex="1">
+                        <TitledPane maxHeight="200.0" prefHeight="200.0" text="APTOS" GridPane.rowIndex="1">
                            <content>
-                              <VBox fx:id="aptosLtgVbox" />
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                 <content>
+                                    <VBox fx:id="aptosLtgVbox" />
+                                 </content>
+                              </ScrollPane>
                            </content>
                         </TitledPane>
-                        <TitledPane maxHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
+                        <TitledPane maxHeight="200.0" prefHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
                            <content>
-                              <VBox fx:id="finalizadosLtgVbox" />
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                 <content>
+                                    <VBox fx:id="finalizadosLtgVbox" />
+                                 </content>
+                              </ScrollPane>
                            </content>
                         </TitledPane>
-                        <TitledPane maxHeight="200.0" text="ABORDADOS" GridPane.rowIndex="3">
+                        <TitledPane maxHeight="200.0" prefHeight="200.0" text="ABORDADOS" GridPane.rowIndex="3">
                            <content>
-                              <VBox fx:id="abortadosLtgVbox" />
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                 <content>
+                                    <VBox fx:id="abortadosLtgVbox" />
+                                 </content>
+                              </ScrollPane>
                            </content>
                         </TitledPane>
                      </children>

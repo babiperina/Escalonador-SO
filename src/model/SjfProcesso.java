@@ -17,7 +17,7 @@ public class SjfProcesso extends BaseProcesso {
 
     @Override
     public String toString() {
-        return "SjfProcesso{" +
+        return "Processo{" +
                 "id=" + id +
                 ", duracao=" + duracao +
                 ", tempoRestante=" + tempoRestante +
