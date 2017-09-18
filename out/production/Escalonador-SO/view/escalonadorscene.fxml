@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EscalonadorSceneController">
     <bottom>
         <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
             <children>
-                <Label text="Desenvolvido por Bárbara Perina." />
+                <Label fx:id="creditos" text="Desenvolvido por Bárbara Perina." />
             </children>
             <BorderPane.margin>
                 <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
@@ -18,7 +19,7 @@
         </HBox>
     </bottom>
     <left>
-        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="" BorderPane.alignment="CENTER">
             <top>
                 <Label text="CONFIGURAÇÕES:" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
@@ -27,9 +28,9 @@
                 </Label>
             </top>
             <center>
-                <TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                <TabPane fx:id="paneConfig" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
                     <tabs>
-                        <Tab text="SJF">
+                        <Tab fx:id="tabSjf" text="SJF">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
@@ -47,7 +48,7 @@
                                 </AnchorPane>
                             </content>
                         </Tab>
-                        <Tab text="RR">
+                        <Tab fx:id="tabRr" text="RR">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
@@ -67,7 +68,7 @@
                                 </AnchorPane>
                             </content>
                         </Tab>
-                        <Tab text="IBS">
+                        <Tab fx:id="tabIbs" text="IBS">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
@@ -85,7 +86,7 @@
                                 </AnchorPane>
                             </content>
                         </Tab>
-                        <Tab text="LTG">
+                        <Tab fx:id="tabLtg" text="LTG">
                             <content>
                                 <AnchorPane>
                                     <children>
@@ -127,11 +128,7 @@
                            <content>
                               <ScrollPane>
                                  <content>
-                                    <VBox fx:id="coresSjfVbox">
-                                       <padding>
-                                          <Insets left="5.0" />
-                                       </padding>
-                                    </VBox>
+                                    <VBox fx:id="coresSjfVbox" />
                                  </content>
                               </ScrollPane>
                            </content>

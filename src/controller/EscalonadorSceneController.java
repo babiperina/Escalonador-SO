@@ -5,11 +5,10 @@ import controller.algoritmos.Rr;
 import controller.algoritmos.Sjf;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TitledPane;
-import javafx.scene.layout.VBox;
+import javafx.geometry.Insets;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import model.LtgProcesso;
 import model.RrProcesso;
 import model.SjfProcesso;
@@ -83,23 +82,65 @@ public class EscalonadorSceneController {
     }
 
     private void atualizarInterfaceSjf() {
+        HBox hbox;
         coresSjfVbox.getChildren().clear();
         for (int i = 0; i < coresSjf.length; i++) {
             if (coresSjf[i] != null) {
-                coresSjfVbox.getChildren().add(new Label(coresSjf[i].toString()));
+                hbox = new HBox();
+                hbox.getChildren().add(new Label(coresSjf[i].toString()));
+
+                if (i % 2 == 0)
+                    hbox.setBackground(new Background(new BackgroundFill(Color.web("#dfe2dc"), CornerRadii.EMPTY, Insets.EMPTY)));
+                else
+                    hbox.setBackground(new Background(new BackgroundFill(Color.web("#b4b5b3"), CornerRadii.EMPTY, Insets.EMPTY)));
+
+                hbox.prefWidth(Control.USE_COMPUTED_SIZE);
+                coresSjfVbox.getChildren().add(hbox);
             } else {
-                coresSjfVbox.getChildren().add(new Label("Core " + (i + 1) + " vazio."));
+                hbox = new HBox();
+                hbox.getChildren().add(new Label("Core " + (i + 1) + " vazio."));
+
+                if (i % 2 == 0)
+                    hbox.setBackground(new Background(new BackgroundFill(Color.web("#dfe2dc"), CornerRadii.EMPTY, Insets.EMPTY)));
+                else
+                    hbox.setBackground(new Background(new BackgroundFill(Color.web("#b4b5b3"), CornerRadii.EMPTY, Insets.EMPTY)));
+
+                hbox.prefWidth(Control.USE_COMPUTED_SIZE);
+                coresSjfVbox.getChildren().add(hbox);
             }
         }
 
         aptosSjfVbox.getChildren().clear();
         for (int i = 0; i < aptosSjf.size(); i++) {
-            aptosSjfVbox.getChildren().add(new Label(aptosSjf.get(i).toString()));
+
+            hbox = new HBox();
+            hbox.getChildren().add(new Label(aptosSjf.get(i).toString()));
+
+            if (i % 2 == 0)
+                hbox.setBackground(new Background(new BackgroundFill(Color.web("#dfe2dc"), CornerRadii.EMPTY, Insets.EMPTY)));
+            else
+                hbox.setBackground(new Background(new BackgroundFill(Color.web("#b4b5b3"), CornerRadii.EMPTY, Insets.EMPTY)));
+
+            hbox.prefWidth(Control.USE_COMPUTED_SIZE);
+
+            aptosSjfVbox.getChildren().add(hbox);
         }
 
         finalizadosSjfVbox.getChildren().clear();
         for (int i = 0; i < finalizadosSjf.size(); i++) {
-            finalizadosSjfVbox.getChildren().add(new Label(finalizadosSjf.get(i).toString()));
+
+            hbox = new HBox();
+            hbox.getChildren().add(new Label(finalizadosSjf.get(i).toString()));
+
+            if (i % 2 == 0)
+                hbox.setBackground(new Background(new BackgroundFill(Color.web("#dfe2dc"), CornerRadii.EMPTY, Insets.EMPTY)));
+            else
+                hbox.setBackground(new Background(new BackgroundFill(Color.web("#b4b5b3"), CornerRadii.EMPTY, Insets.EMPTY)));
+
+            hbox.prefWidth(Control.USE_COMPUTED_SIZE);
+
+
+            finalizadosSjfVbox.getChildren().add(hbox);
         }
     }
 
@@ -179,7 +220,7 @@ public class EscalonadorSceneController {
     }
 
     private void atualizarInterfaceLtg() {
-            coresLtgVbox.getChildren().clear();
+        coresLtgVbox.getChildren().clear();
         for (int i = 0; i < coresLtg.length; i++) {
             if (coresLtg[i] != null) {
                 coresLtgVbox.getChildren().add(new Label(coresLtg[i].toString()));
