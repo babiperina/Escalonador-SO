@@ -7,6 +7,7 @@ import javafx.scene.paint.Color;
 import model.RrProcesso;
 import model.SjfProcesso;
 import model.enums.Estado;
+import util.Config;
 
 public class Processo {
 
@@ -15,33 +16,33 @@ public class Processo {
 
         processo = new VBox();
 
-        Label labelTempoRestanteDuracao = new Label(p.getTempoRestante()+"/"+p.getDuracao());
+        Label labelTempoRestanteDuracao = new Label(p.getTempoRestante() + "/" + p.getDuracao());
 
         processo.getChildren().addAll(new Label("PID: " + p.getId()), new Label(""), new Label(""), labelTempoRestanteDuracao);
 
 
         if (p.isNovo()) {
-            //vermelho
-            processo.setBackground(new Background(new BackgroundFill(Color.web("#59aad6"), CornerRadii.EMPTY, Insets.EMPTY)));
+
+            processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_NOVO_PROCESSO), CornerRadii.EMPTY, Insets.EMPTY)));
             p.setNovo(false);
         } else {
             if (p.getEstado() == Estado.EXECUTANDO.getValor()) {
-                if (i % 2 == 0) //verdes
-                    processo.setBackground(new Background(new BackgroundFill(Color.web("#afc697"), CornerRadii.EMPTY, Insets.EMPTY)));
+                if (i % 2 == 0)
+                    processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_CORE_CLARO), CornerRadii.EMPTY, Insets.EMPTY)));
                 else
-                    processo.setBackground(new Background(new BackgroundFill(Color.web("#adce8a"), CornerRadii.EMPTY, Insets.EMPTY)));
+                    processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_CORE_ESCURO), CornerRadii.EMPTY, Insets.EMPTY)));
             } else {
-              if(p.getEstado() == Estado.FINALIZADO.getValor()){
-                  if (i % 2 == 0) //cinzas
-                      processo.setBackground(new Background(new BackgroundFill(Color.web("#dfe2dc"), CornerRadii.EMPTY, Insets.EMPTY)));
-                  else
-                      processo.setBackground(new Background(new BackgroundFill(Color.web("#b4b5b3"), CornerRadii.EMPTY, Insets.EMPTY)));
-              } else {
-                  if (i % 2 == 0) //amarelo
-                      processo.setBackground(new Background(new BackgroundFill(Color.web("#efe886"), CornerRadii.EMPTY, Insets.EMPTY)));
-                  else
-                      processo.setBackground(new Background(new BackgroundFill(Color.web("#ddd673"), CornerRadii.EMPTY, Insets.EMPTY)));
-              }
+                if (p.getEstado() == Estado.FINALIZADO.getValor()) {
+                    if (i % 2 == 0)
+                        processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_FINALIZADO_CLARO), CornerRadii.EMPTY, Insets.EMPTY)));
+                    else
+                        processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_FINALIZADO_ESCURO), CornerRadii.EMPTY, Insets.EMPTY)));
+                } else {
+                    if (i % 2 == 0)
+                        processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_APTO_CLARO), CornerRadii.EMPTY, Insets.EMPTY)));
+                    else
+                        processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_APTO_ESCURO), CornerRadii.EMPTY, Insets.EMPTY)));
+                }
 
             }
 
@@ -84,32 +85,32 @@ public class Processo {
 
         processo = new VBox();
 
-        Label labelTempoRestanteDuracao = new Label(p.getTempoRestante()+"/"+p.getDuracao());
+        Label labelTempoRestanteDuracao = new Label(p.getTempoRestante() + "/" + p.getDuracao());
 
         processo.getChildren().addAll(new Label("PID: " + p.getId()), new Label(""), new Label(""), labelTempoRestanteDuracao);
 
 
         if (p.isNovo()) {
-            //vermelho
-            processo.setBackground(new Background(new BackgroundFill(Color.web("#59aad6"), CornerRadii.EMPTY, Insets.EMPTY)));
+
+            processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_NOVO_PROCESSO), CornerRadii.EMPTY, Insets.EMPTY)));
             p.setNovo(false);
         } else {
             if (p.getEstado() == Estado.EXECUTANDO.getValor()) {
-                if (i % 2 == 0) //verdes
-                    processo.setBackground(new Background(new BackgroundFill(Color.web("#afc697"), CornerRadii.EMPTY, Insets.EMPTY)));
+                if (i % 2 == 0)
+                    processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_CORE_CLARO), CornerRadii.EMPTY, Insets.EMPTY)));
                 else
-                    processo.setBackground(new Background(new BackgroundFill(Color.web("#adce8a"), CornerRadii.EMPTY, Insets.EMPTY)));
+                    processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_CORE_ESCURO), CornerRadii.EMPTY, Insets.EMPTY)));
             } else {
-                if(p.getEstado() == Estado.FINALIZADO.getValor()){
-                    if (i % 2 == 0) //cinzas
-                        processo.setBackground(new Background(new BackgroundFill(Color.web("#dfe2dc"), CornerRadii.EMPTY, Insets.EMPTY)));
+                if (p.getEstado() == Estado.FINALIZADO.getValor()) {
+                    if (i % 2 == 0)
+                        processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_FINALIZADO_CLARO), CornerRadii.EMPTY, Insets.EMPTY)));
                     else
-                        processo.setBackground(new Background(new BackgroundFill(Color.web("#b4b5b3"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_FINALIZADO_ESCURO), CornerRadii.EMPTY, Insets.EMPTY)));
                 } else {
-                    if (i % 2 == 0) //amarelo
-                        processo.setBackground(new Background(new BackgroundFill(Color.web("#efe886"), CornerRadii.EMPTY, Insets.EMPTY)));
+                    if (i % 2 == 0)
+                        processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_APTO_CLARO), CornerRadii.EMPTY, Insets.EMPTY)));
                     else
-                        processo.setBackground(new Background(new BackgroundFill(Color.web("#ddd673"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        processo.setBackground(new Background(new BackgroundFill(Color.web(Config.COLOR_APTO_ESCURO), CornerRadii.EMPTY, Insets.EMPTY)));
                 }
 
             }
