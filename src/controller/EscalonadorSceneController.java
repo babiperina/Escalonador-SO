@@ -37,11 +37,11 @@ public class EscalonadorSceneController {
     Button addProcessoSjfButton;
 
     @FXML
-    VBox coresSjfVbox;
+    HBox coresSjfHbox;
     @FXML
-    VBox aptosSjfVbox;
+    HBox aptosSjfHbox;
     @FXML
-    VBox finalizadosSjfVbox;
+    HBox finalizadosSjfHbox;
 
     @FXML
     TitledPane paneSjf;
@@ -60,7 +60,7 @@ public class EscalonadorSceneController {
                 while (Config.SJF_IS_RUNNING) {
                     sjf.atualizarAlgoritmo();
                     try {
-                        Thread.sleep(500);
+                        Thread.sleep(Config.SEGUNDO);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -83,34 +83,24 @@ public class EscalonadorSceneController {
     }
 
     private void atualizarInterfaceSjf() {
-        HBox hbox;
-        coresSjfVbox.getChildren().clear();
+        coresSjfHbox.getChildren().clear();
         for (int i = 0; i < coresSjf.length; i++) {
             if (coresSjf[i] != null) {
-                coresSjfVbox.getChildren().add(Processo.display(coresSjf[i], i));
+                coresSjfHbox.getChildren().add(Processo.displaySjfProcesso(coresSjf[i], i));
             } else {
-                hbox = new HBox();
-                hbox.getChildren().add(new Label("Core " + (i + 1) + " vazio."));
-
-                if (i % 2 == 0)
-                    hbox.setBackground(new Background(new BackgroundFill(Color.web("#dfe2dc"), CornerRadii.EMPTY, Insets.EMPTY)));
-                else
-                    hbox.setBackground(new Background(new BackgroundFill(Color.web("#b4b5b3"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-                hbox.prefWidth(Control.USE_COMPUTED_SIZE);
-                coresSjfVbox.getChildren().add(hbox);
+                coresSjfHbox.getChildren().add(Processo.displayCores(i));
             }
         }
 
-        aptosSjfVbox.getChildren().clear();
+        aptosSjfHbox.getChildren().clear();
         for (int i = 0; i < aptosSjf.size(); i++) {
-            aptosSjfVbox.getChildren().add(Processo.display(aptosSjf.get(i), i));
+            aptosSjfHbox.getChildren().add(Processo.displaySjfProcesso(aptosSjf.get(i), i));
             aptosSjf.get(i).setNovo(false);
         }
 
-        finalizadosSjfVbox.getChildren().clear();
+        finalizadosSjfHbox.getChildren().clear();
         for (int i = 0; i < finalizadosSjf.size(); i++) {
-            finalizadosSjfVbox.getChildren().add(Processo.display(finalizadosSjf.get(i), i));
+            finalizadosSjfHbox.getChildren().add(Processo.displaySjfProcesso(finalizadosSjf.get(i), i));
             finalizadosSjf.get(i).setNovo(false);
         }
     }
@@ -167,7 +157,7 @@ public class EscalonadorSceneController {
                 while (Config.LTG_IS_RUNNING) {
                     ltg.atualizarAlgoritmo();
                     try {
-                        Thread.sleep(500);
+                        Thread.sleep(Config.SEGUNDO);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -246,11 +236,11 @@ public class EscalonadorSceneController {
     Button addProcessoRrButton;
 
     @FXML
-    VBox coresRrVbox;
+    HBox coresRrHbox;
     @FXML
-    VBox aptosRrVbox;
+    HBox aptosRrHbox;
     @FXML
-    VBox finalizadosRrVbox;
+    HBox finalizadosRrHbox;
 
     @FXML
     TitledPane paneRr;
@@ -291,23 +281,23 @@ public class EscalonadorSceneController {
     }
 
     private void atualizarInterfaceRr() {
-        coresRrVbox.getChildren().clear();
+        coresRrHbox.getChildren().clear();
         for (int i = 0; i < coresRr.length; i++) {
             if (coresRr[i] != null) {
-                coresRrVbox.getChildren().add(new Label(coresRr[i].toString()));
+                coresRrHbox.getChildren().add(Processo.displayRrProcesso(coresRr[i], i));
             } else {
-                coresRrVbox.getChildren().add(new Label("Core " + (i + 1) + " vazio."));
+                coresRrHbox.getChildren().add(Processo.displayCores(i));
             }
         }
 
-        aptosRrVbox.getChildren().clear();
+        aptosRrHbox.getChildren().clear();
         for (int i = 0; i < aptosRr.size(); i++) {
-            aptosRrVbox.getChildren().add(new Label(aptosRr.get(i).toString()));
+            aptosRrHbox.getChildren().add(Processo.displayRrProcesso(aptosRr.get(i), i));
         }
 
-        finalizadosRrVbox.getChildren().clear();
+        finalizadosRrHbox.getChildren().clear();
         for (int i = 0; i < finalizadosRr.size(); i++) {
-            finalizadosRrVbox.getChildren().add(new Label(finalizadosRr.get(i).toString()));
+            finalizadosRrHbox.getChildren().add(Processo.displayRrProcesso(finalizadosRr.get(i), i));
         }
     }
 
