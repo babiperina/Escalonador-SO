@@ -39,6 +39,10 @@ public class RrProcesso extends BaseProcesso {
         this.quantumRestante = this.quantum;
     }
 
+    public int getQuantum() {
+        return quantum;
+    }
+
     public int getQuantumRestante() {
         return quantumRestante;
     }

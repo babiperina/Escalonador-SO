@@ -11,7 +11,7 @@
     <bottom>
         <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
             <children>
-                <Label fx:id="creditos" text="Desenvolvido por Bárbara Perina." />
+                <Label fx:id="creditos" text="Desenvolvido por Bárbara Perina e Heitor Lopes." />
             </children>
             <BorderPane.margin>
                 <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
@@ -193,6 +193,19 @@
                            <content>
                               <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
                                 <tabs>
+                                    <Tab text="Geral">
+                                       <content>
+                                          <ScrollPane prefViewportHeight="16.0" prefViewportWidth="376.0">
+                                             <content>
+                                                <HBox fx:id="aptosRrHbox" spacing="5.0">
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                    </Tab>
                                   <Tab text="Prioridade 0">
                                        <content>
                                           <ScrollPane>
@@ -318,7 +331,7 @@
                               </ScrollPane>
                            </content>
                         </TitledPane>
-                        <TitledPane maxHeight="200.0" prefHeight="200.0" text="ABORDADOS" GridPane.rowIndex="3">
+                        <TitledPane maxHeight="200.0" prefHeight="200.0" text="ABORTADOS" GridPane.rowIndex="3">
                            <content>
                               <ScrollPane prefHeight="200.0" prefWidth="200.0">
                                  <content>
