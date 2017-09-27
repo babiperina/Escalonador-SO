@@ -191,15 +191,62 @@
                         </TitledPane>
                         <TitledPane animated="false" maxHeight="200.0" prefHeight="200.0" text="APTOS" GridPane.rowIndex="1">
                            <content>
-                              <ScrollPane>
-                                 <content>
-                                    <HBox fx:id="aptosRrHbox" spacing="5.0">
-                                       <padding>
-                                          <Insets left="5.0" right="5.0" top="5.0" />
-                                       </padding>
-                                    </HBox>
-                                 </content>
-                              </ScrollPane>
+                              <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                  <Tab text="Prioridade 0">
+                                       <content>
+                                          <ScrollPane>
+                                             <content>
+                                                <HBox fx:id="prioridadeZeroHbox" spacing="5.0">
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                  </Tab>
+                                  <Tab text="Prioridade 1">
+                                       <content>
+                                          <ScrollPane>
+                                             <content>
+                                                <HBox fx:id="prioridadeUmHbox" spacing="5.0">
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                  </Tab>
+                                    <Tab text="Prioridade 2">
+                                       <content>
+                                          <ScrollPane>
+                                             <content>
+                                                <HBox fx:id="prioridadeDoisHbox" spacing="5.0">
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Prioridade 3">
+                                       <content>
+                                          <ScrollPane>
+                                             <content>
+                                                <HBox fx:id="prioridadeTresHbox" spacing="5.0">
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
                            </content>
                         </TitledPane>
                         <TitledPane animated="false" maxHeight="200.0" prefHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
@@ -236,7 +283,11 @@
                            <content>
                               <ScrollPane prefHeight="200.0" prefWidth="200.0">
                                  <content>
-                                    <VBox fx:id="coresLtgVbox" />
+                                    <HBox fx:id="coresLtgHbox" spacing="5.0">
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
                                  </content>
                               </ScrollPane>
                            </content>
@@ -245,7 +296,11 @@
                            <content>
                               <ScrollPane prefHeight="200.0" prefWidth="200.0">
                                  <content>
-                                    <VBox fx:id="aptosLtgVbox" />
+                                    <HBox fx:id="aptosLtgHbox" spacing="5.0">
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
                                  </content>
                               </ScrollPane>
                            </content>
@@ -254,7 +309,11 @@
                            <content>
                               <ScrollPane prefHeight="200.0" prefWidth="200.0">
                                  <content>
-                                    <VBox fx:id="finalizadosLtgVbox" />
+                                    <HBox fx:id="finalizadosLtgHbox" spacing="5.0">
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
                                  </content>
                               </ScrollPane>
                            </content>
@@ -263,7 +322,11 @@
                            <content>
                               <ScrollPane prefHeight="200.0" prefWidth="200.0">
                                  <content>
-                                    <VBox fx:id="abortadosLtgVbox" />
+                                    <HBox fx:id="abortadosLtgHbox" spacing="5.0">
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
                                  </content>
                               </ScrollPane>
                            </content>

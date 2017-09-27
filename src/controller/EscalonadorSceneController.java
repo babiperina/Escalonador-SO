@@ -58,12 +58,12 @@ public class EscalonadorSceneController {
             @Override
             public void run() {
                 while (Config.SJF_IS_RUNNING) {
-                    sjf.atualizarAlgoritmo();
                     try {
                         Thread.sleep(Config.SEGUNDO);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
+                    sjf.atualizarAlgoritmo();
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
@@ -133,13 +133,13 @@ public class EscalonadorSceneController {
     Button addProcessoLtgButton;
 
     @FXML
-    VBox coresLtgVbox;
+    HBox coresLtgHbox;
     @FXML
-    VBox aptosLtgVbox;
+    HBox aptosLtgHbox;
     @FXML
-    VBox finalizadosLtgVbox;
+    HBox finalizadosLtgHbox;
     @FXML
-    VBox abortadosLtgVbox;
+    HBox abortadosLtgHbox;
 
     @FXML
     TitledPane paneLtg;
@@ -181,28 +181,28 @@ public class EscalonadorSceneController {
     }
 
     private void atualizarInterfaceLtg() {
-        coresLtgVbox.getChildren().clear();
+        coresLtgHbox.getChildren().clear();
         for (int i = 0; i < coresLtg.length; i++) {
             if (coresLtg[i] != null) {
-                coresLtgVbox.getChildren().add(new Label(coresLtg[i].toString()));
+                coresLtgHbox.getChildren().add(Processo.displayLtgProcesso(coresLtg[i], i));
             } else {
-                coresLtgVbox.getChildren().add(new Label("Core " + (i + 1) + " vazio."));
+                coresLtgHbox.getChildren().add(Processo.displayCores(i));
             }
         }
 
-        aptosLtgVbox.getChildren().clear();
+        aptosLtgHbox.getChildren().clear();
         for (int i = 0; i < aptosLtg.size(); i++) {
-            aptosLtgVbox.getChildren().add(new Label(aptosLtg.get(i).toString()));
+            aptosLtgHbox.getChildren().add(Processo.displayLtgProcesso(aptosLtg.get(i), i));
         }
 
-        finalizadosLtgVbox.getChildren().clear();
+        finalizadosLtgHbox.getChildren().clear();
         for (int i = 0; i < finalizadosLtg.size(); i++) {
-            finalizadosLtgVbox.getChildren().add(new Label(finalizadosLtg.get(i).toString()));
+            finalizadosLtgHbox.getChildren().add(Processo.displayLtgProcesso(finalizadosLtg.get(i), i));
         }
 
-        abortadosLtgVbox.getChildren().clear();
+        abortadosLtgHbox.getChildren().clear();
         for (int i = 0; i < abortadosLtg.size(); i++) {
-            abortadosLtgVbox.getChildren().add(new Label(abortadosLtg.get(i).toString()));
+            abortadosLtgHbox.getChildren().add(Processo.displayLtgProcesso(abortadosLtg.get(i), i));
         }
     }
 
@@ -219,7 +219,10 @@ public class EscalonadorSceneController {
     //RR Algoritmo
     private Rr rr;
     private RrProcesso[] coresRr;
-    private ArrayList<RrProcesso> aptosRr;
+    private ArrayList<RrProcesso> p0;
+    private ArrayList<RrProcesso> p1;
+    private ArrayList<RrProcesso> p2;
+    private ArrayList<RrProcesso> p3;
     private ArrayList<RrProcesso> finalizadosRr;
     private ArrayList<RrProcesso> abortadosRr;
 
@@ -238,7 +241,13 @@ public class EscalonadorSceneController {
     @FXML
     HBox coresRrHbox;
     @FXML
-    HBox aptosRrHbox;
+    HBox prioridadeZeroHbox;
+    @FXML
+    HBox prioridadeUmHbox;
+    @FXML
+    HBox prioridadeDoisHbox;
+    @FXML
+    HBox prioridadeTresHbox;
     @FXML
     HBox finalizadosRrHbox;
 
@@ -266,7 +275,10 @@ public class EscalonadorSceneController {
                         @Override
                         public void run() {
                             coresRr = rr.getCores();
-                            aptosRr = rr.getAptos();
+                            p0 = rr.getP0();
+                            p1 = rr.getP1();
+                            p2 = rr.getP2();
+                            p3 = rr.getP3();
                             finalizadosRr = rr.getFinalizados();
                             atualizarInterfaceRr();
                         }
@@ -290,10 +302,31 @@ public class EscalonadorSceneController {
             }
         }
 
-        aptosRrHbox.getChildren().clear();
-        for (int i = 0; i < aptosRr.size(); i++) {
-            aptosRrHbox.getChildren().add(Processo.displayRrProcesso(aptosRr.get(i), i));
+        prioridadeZeroHbox.getChildren().clear();
+        for (int i = 0; i < p0.size(); i++) {
+            prioridadeZeroHbox.getChildren().add(Processo.displayRrProcesso(p0.get(i), i));
         }
+
+        prioridadeUmHbox.getChildren().clear();
+        for (int i = 0; i < p1.size(); i++) {
+            prioridadeUmHbox.getChildren().add(Processo.displayRrProcesso(p1.get(i), i));
+        }
+
+        prioridadeDoisHbox.getChildren().clear();
+        for (int i = 0; i < p2.size(); i++) {
+            prioridadeDoisHbox.getChildren().add(Processo.displayRrProcesso(p2.get(i), i));
+        }
+
+        prioridadeTresHbox.getChildren().clear();
+        for (int i = 0; i < p3.size(); i++) {
+            prioridadeTresHbox.getChildren().add(Processo.displayRrProcesso(p3.get(i), i));
+        }
+
+
+//        aptosRrHbox.getChildren().clear();
+//        for (int i = 0; i < aptosRr.size(); i++) {
+//            aptosRrHbox.getChildren().add(Processo.displayRrProcesso(aptosRr.get(i), i));
+//        }
 
         finalizadosRrHbox.getChildren().clear();
         for (int i = 0; i < finalizadosRr.size(); i++) {
@@ -306,7 +339,7 @@ public class EscalonadorSceneController {
     }
 
     private void verificarStatusBotaoIniciarRr() {
-        if (!Config.LTG_IS_RUNNING)
+        if (!Config.RR_IS_RUNNING)
             iniciarLtgButton.setDisable(false);
     }
 
