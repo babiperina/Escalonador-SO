@@ -1,4 +1,4 @@
-# Simulador de Algoritmos de Escalonamento.
+# Scheduling Simulator.
 
 Este repositório foi criado para guardar o código do trabalho da NP1 da cadeira de Sistemas Operacionais, lecionada pelo professor Eriko na Universade de Fortaleza.
 
