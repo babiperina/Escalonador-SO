@@ -1,4 +1,14 @@
-# scheduling-simulator
-Here u'll meet a simulator of scheduling with four scheduling algorithms: Shortest Join First, Round Robin(with priority queue), IBS and LTG. This simulator was implemented how homework for Operational Systems's class.
+# Simulador de Algoritmos de Escalonamento.
 
-![alt text](https://ibb.co/nzsyTw)
+Este repositório foi criado para guardar o código do trabalho da NP1 da cadeira de Sistemas Operacionais, lecionada pelo professor Eriko na Universade de Fortaleza.
+
+O trabalho consistia em desenvolver um simulador, utilizando interface gráfica, de quatro algoritmos de escalonamento: 
+** Shortest Job First
+** Round Robin (com fila de prioridade)
+** Least Time to Go
+** IBS
+
+Desenvolvedores: Bárbara Perina e Heitor Lopes.
+
+
+
