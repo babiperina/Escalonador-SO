@@ -58,11 +58,7 @@ public class EscalonadorSceneController {
             @Override
             public void run() {
                 while (Config.SJF_IS_RUNNING) {
-                    try {
-                        Thread.sleep(Config.SEGUNDO);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+
                     sjf.atualizarAlgoritmo();
                     Platform.runLater(new Runnable() {
                         @Override
@@ -74,6 +70,11 @@ public class EscalonadorSceneController {
                         }
                     });
                     verificarStatusBotaoIniciar();
+                    try {
+                        Thread.sleep(Config.SEGUNDO);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -156,11 +157,7 @@ public class EscalonadorSceneController {
             public void run() {
                 while (Config.LTG_IS_RUNNING) {
                     ltg.atualizarAlgoritmo();
-                    try {
-                        Thread.sleep(Config.SEGUNDO);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
@@ -172,6 +169,11 @@ public class EscalonadorSceneController {
                         }
                     });
                     verificarStatusBotaoIniciarLtg();
+                    try {
+                        Thread.sleep(Config.SEGUNDO);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -269,11 +271,7 @@ public class EscalonadorSceneController {
             public void run() {
                 while (Config.RR_IS_RUNNING) {
                     rr.atualizarAlgoritmo();
-                    try {
-                        Thread.sleep(Config.SEGUNDO);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
@@ -288,6 +286,11 @@ public class EscalonadorSceneController {
                         }
                     });
                     verificarStatusBotaoIniciarRr();
+                    try {
+                        Thread.sleep(Config.SEGUNDO);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
