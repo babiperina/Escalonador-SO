@@ -356,4 +356,12 @@
             </panes>
         </Accordion>
     </center>
+   <top>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="relogioIcon" text="Label" />
+            <Label fx:id="relogio" text="Label" />
+         </children>
+      </FlowPane>
+   </top>
 </BorderPane>

@@ -9,6 +9,7 @@ public class Config {
     public static boolean SJF_IS_RUNNING = false;
     public static boolean LTG_IS_RUNNING = false;
     public static boolean RR_IS_RUNNING = false;
+    public static boolean IBS_IS_RUNNING = false;
 
     public static String COLOR_CORE_CLARO = "#38a821";
     public static String COLOR_CORE_ESCURO = "#398e27";
