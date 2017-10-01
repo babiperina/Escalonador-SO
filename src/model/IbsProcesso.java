@@ -55,4 +55,19 @@ public class IbsProcesso extends BaseProcesso {
         }
         this.endTs = new Timestamp(System.currentTimeMillis() + end * 1000);
     }
+
+    @Override
+    public String toString() {
+        return "IbsProcesso{" +
+                "start=" + start +
+                ", end=" + end +
+                ", startTs=" + startTs +
+                ", endTs=" + endTs +
+                ", id=" + id +
+                ", duracao=" + duracao +
+                ", tempoRestante=" + tempoRestante +
+                ", estado=" + estado +
+                ", isNovo=" + isNovo +
+                '}';
+    }
 }

@@ -390,8 +390,9 @@ public class EscalonadorSceneController implements Initializable {
     }
 
     //IBS Algoritmo
-   /* private Ibs ibs;
+    private Ibs ibs;
     private ArrayList<IbsProcesso> esperandoIbs;
+    private ArrayList<IbsProcesso> abortadosIbs;
 
 
     @FXML
@@ -405,11 +406,13 @@ public class EscalonadorSceneController implements Initializable {
 
     @FXML
     HBox esperandoIbsHbox;
+    @FXML
+    HBox abortadosIbsHbox;
 
     @FXML
     TitledPane paneIbs;
 
-    public void iniciarRr() {
+    public void iniciarIbs() {
 
         iniciarIbsButton.setDisable(true);
         paneIbs.setExpanded(true);
@@ -420,22 +423,17 @@ public class EscalonadorSceneController implements Initializable {
             @Override
             public void run() {
                 while (Config.IBS_IS_RUNNING) {
-                    rr.atualizarAlgoritmo();
+                    ibs.atualizarAlgoritmo();
 
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
-                            coresRr = rr.getCores();
-                            aptosRr = rr.getAptos();
-                            p0 = rr.getP0();
-                            p1 = rr.getP1();
-                            p2 = rr.getP2();
-                            p3 = rr.getP3();
-                            finalizadosRr = rr.getFinalizados();
-                            atualizarInterfaceRr();
+                            esperandoIbs = ibs.getEsperando();
+                            abortadosIbs = ibs.getAbortados();
+                            atualizarInterfaceIbs();
                         }
                     });
-                    verificarStatusBotaoIniciarRr();
+                    verificarStatusBotaoIniciarIbs();
                     try {
                         Thread.sleep(Config.SEGUNDO);
                     } catch (InterruptedException e) {
@@ -449,58 +447,37 @@ public class EscalonadorSceneController implements Initializable {
 
     }
 
-    private void atualizarInterfaceRr() {
-        coresRrHbox.getChildren().clear();
-        for (int i = 0; i < coresRr.length; i++) {
-            if (coresRr[i] != null) {
-                coresRrHbox.getChildren().add(Processo.displayRrProcesso(coresRr[i], i));
-            } else {
-                coresRrHbox.getChildren().add(Processo.displayCores(i));
-            }
+    private void atualizarInterfaceIbs() {
+//        coresRrHbox.getChildren().clear();
+//        for (int i = 0; i < coresRr.length; i++) {
+//            if (coresRr[i] != null) {
+//                coresRrHbox.getChildren().add(Processo.displayRrProcesso(coresRr[i], i));
+//            } else {
+//                coresRrHbox.getChildren().add(Processo.displayCores(i));
+//            }
+//        }
+
+        esperandoIbsHbox.getChildren().clear();
+        for (int i = 0; i < esperandoIbs.size(); i++) {
+            esperandoIbsHbox.getChildren().add(Processo.displayIbsProcesso(esperandoIbs.get(i), i));
+        }
+        abortadosIbsHbox.getChildren().clear();
+        for (int i = 0; i < abortadosIbs.size(); i++) {
+            abortadosIbsHbox.getChildren().add(Processo.displayIbsProcesso(abortadosIbs.get(i), i));
         }
 
-        aptosRrHbox.getChildren().clear();
-        for (int i = 0; i < aptosRr.size(); i++) {
-            aptosRrHbox.getChildren().add(Processo.displayRrProcesso(aptosRr.get(i), i));
-        }
-
-        prioridadeZeroHbox.getChildren().clear();
-        for (int i = 0; i < p0.size(); i++) {
-            prioridadeZeroHbox.getChildren().add(Processo.displayRrProcesso(p0.get(i), i));
-        }
-
-        prioridadeUmHbox.getChildren().clear();
-        for (int i = 0; i < p1.size(); i++) {
-            prioridadeUmHbox.getChildren().add(Processo.displayRrProcesso(p1.get(i), i));
-        }
-
-        prioridadeDoisHbox.getChildren().clear();
-        for (int i = 0; i < p2.size(); i++) {
-            prioridadeDoisHbox.getChildren().add(Processo.displayRrProcesso(p2.get(i), i));
-        }
-
-        prioridadeTresHbox.getChildren().clear();
-        for (int i = 0; i < p3.size(); i++) {
-            prioridadeTresHbox.getChildren().add(Processo.displayRrProcesso(p3.get(i), i));
-        }
-
-
-        finalizadosRrHbox.getChildren().clear();
-        for (int i = 0; i < finalizadosRr.size(); i++) {
-            finalizadosRrHbox.getChildren().add(Processo.displayRrProcesso(finalizadosRr.get(i), i));
-        }
     }
 
-    public void adicionarProcessoAptosRr() {
-        rr.adicionarProcesso(new RrProcesso());
+    public void adicionarProcessoEsperandoIbs() {
+        ibs.adicionarProcesso(new IbsProcesso());
     }
 
-    private void verificarStatusBotaoIniciarRr() {
-        if (!Config.RR_IS_RUNNING)
-            iniciarRrButton.setDisable(false);
+    private void verificarStatusBotaoIniciarIbs() {
+        if (!Config.IBS_IS_RUNNING)
+            iniciarIbsButton.setDisable(false);
     }
 
-*/
+
 }
 
 

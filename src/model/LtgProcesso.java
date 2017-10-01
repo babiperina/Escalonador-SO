@@ -36,13 +36,7 @@ public class LtgProcesso extends BaseProcesso {
 
     @Override
     public String toString() {
-        return "Processo{" +
-                "id=" + id +
-                ", duracao=" + duracao +
-                ", tempoRestante=" + tempoRestante +
-                ", estado=" + estado +
-                ", deadline=" + deadline +
-                '}';
+        return "Processo [ PID:" + id + " \tDURAÇÃO:" + duracao + " \tTEMPO RESTANTE:" + tempoRestante + " \tESTADO:" + estado + " \tDEADLINE:" + deadline + " ]";
     }
 
 }

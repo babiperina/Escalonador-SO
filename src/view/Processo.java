@@ -8,6 +8,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import model.IbsProcesso;
 import model.LtgProcesso;
 import model.RrProcesso;
 import model.SjfProcesso;
@@ -92,6 +93,28 @@ public class Processo {
         return processo;
     }
 
+    public static VBox displayIbsProcesso(IbsProcesso p, int i) {
+        VBox processo;
+
+        processo = new VBox();
+        Label labelCore = new Label("CORE " + i);
+        labelCore.setFont(Font.font("Verdana", FontWeight.BOLD, 10));
+        Label labelPid = new Label("PID: " + p.getId());
+        labelPid.setFont(Font.font("Verdana", 10));
+        Label labelTempoRestanteDuracao = new Label("TEMPO: " + p.getTempoRestante() + "/" + p.getDuracao());
+        labelTempoRestanteDuracao.setFont(Font.font("Verdana", 10));
+        Label labelDeadline = new Label("DEADLINE: " + new SimpleDateFormat("HH:mm:ss").format(p.getStartTs()));
+        labelDeadline.setFont(Font.font("Verdana", 10));
+
+        if (p.getEstado() == Estado.EXECUTANDO.getValor())
+            processo.getChildren().addAll(labelCore, labelPid, labelDeadline, labelTempoRestanteDuracao);
+        else
+            processo.getChildren().addAll(new Label(), labelPid, labelDeadline, labelTempoRestanteDuracao);
+
+        displayProcesso(processo, p, i);
+
+        return processo;
+    }
 
     public static VBox displayCores(int i) {
         VBox processo;
@@ -123,7 +146,6 @@ public class Processo {
         processo.setPrefSize(120, 50);
         return processo;
     }
-
 
     private static void displayProcesso(VBox vb, BaseProcesso p, int i) {
         if (p.isNovo()) {

@@ -49,14 +49,14 @@ public class RrProcesso extends BaseProcesso {
 
     @Override
     public String toString() {
-        return "Processo{" +
-                "id=" + id +
-                ", duracao=" + duracao +
-                ", tempoRestante=" + tempoRestante +
-                ", estado=" + estado +
-                ", prioridade=" + prioridade +
-                ", quantum=" + quantum +
-                ", quantumRestante=" + quantumRestante +
-                '}';
+        return "Processo [" +
+                "PID:" + id +
+                " \tDURAÇÃO:" + duracao +
+                " \tTEMPO RESTANTE:" + tempoRestante +
+                " \tESTADO:" + estado +
+                " \tPRIORIDADE:" + prioridade +
+                " \tQUANTUM:" + quantum +
+                " \tQUANTUM RESTANTE:" + quantumRestante +
+                ']';
     }
 }
