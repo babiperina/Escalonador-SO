@@ -1,70 +1,46 @@
 package model;
 
 import model.bases.BaseProcesso;
+import util.Config;
 
-import java.sql.Timestamp;
 import java.util.Random;
 
 public class IbsProcesso extends BaseProcesso {
 
-    private int start;
-    private int end;
-    private Timestamp startTs;
-    private Timestamp endTs;
+    private Integer start;
+    private Integer end;
 
 
     public IbsProcesso() {
         super();
-        setStartTs();
-        setEndTs();
+        setStart();
+        setEnd();
     }
 
-    public int getStart() {
+    public Integer getStart() {
         return start;
     }
 
-    public void setStart(int start) {
-        this.start = start;
+    public void setStart() {
+        int random = new Random().nextInt(10) + 2;
+        this.start = Config.timeIBS + random;
     }
 
-    public int getEnd() {
+    public Integer getEnd() {
         return end;
     }
 
-    public void setEnd(int end) {
-        this.end = end;
+    public void setEnd() {
+        int random = new Random().nextInt(20) + 1;
+        this.end = start + random;
     }
 
-    public Timestamp getStartTs() {
-        return startTs;
-    }
-
-    public void setStartTs() {
-        start = new Random().nextInt(24);
-        this.startTs = new Timestamp(System.currentTimeMillis() + start * 1000);
-    }
-
-    public Timestamp getEndTs() {
-        return endTs;
-    }
-
-    public void setEndTs() {
-        end = start + new Random().nextInt(21);
-        if (end > 24) {
-            end = 24;
-        } else if (end == start) {
-            end = start + 1;
-        }
-        this.endTs = new Timestamp(System.currentTimeMillis() + end * 1000);
-    }
 
     @Override
     public String toString() {
         return "IbsProcesso{" +
                 "start=" + start +
                 ", end=" + end +
-                ", startTs=" + startTs +
-                ", endTs=" + endTs +
                 ", id=" + id +
                 ", duracao=" + duracao +
                 ", tempoRestante=" + tempoRestante +

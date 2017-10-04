@@ -391,8 +391,10 @@ public class EscalonadorSceneController implements Initializable {
 
     //IBS Algoritmo
     private Ibs ibs;
+    private ArrayList<IbsProcesso> executandoIbs;
     private ArrayList<IbsProcesso> esperandoIbs;
     private ArrayList<IbsProcesso> abortadosIbs;
+    private ArrayList<IbsProcesso> finalizadosIbs;
 
 
     @FXML
@@ -405,9 +407,13 @@ public class EscalonadorSceneController implements Initializable {
     Button addProcessoIbsButton;
 
     @FXML
+    HBox executandoIbsHbox;
+    @FXML
     HBox esperandoIbsHbox;
     @FXML
     HBox abortadosIbsHbox;
+    @FXML
+    HBox finalizadosIbsHbox;
 
     @FXML
     TitledPane paneIbs;
@@ -428,8 +434,10 @@ public class EscalonadorSceneController implements Initializable {
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
+                            executandoIbs = ibs.getExecutando();
                             esperandoIbs = ibs.getEsperando();
                             abortadosIbs = ibs.getAbortados();
+                            finalizadosIbs = ibs.getFinalizados();
                             atualizarInterfaceIbs();
                         }
                     });
@@ -457,6 +465,15 @@ public class EscalonadorSceneController implements Initializable {
 //            }
 //        }
 
+        executandoIbsHbox.getChildren().clear();
+        for (int i = 0; i < executandoIbs.size(); i++) {
+            if (executandoIbs.get(i) != null)
+                executandoIbsHbox.getChildren().add(Processo.displayIbsProcesso(executandoIbs.get(i), i));
+            else
+                executandoIbsHbox.getChildren().add(Processo.displayCores(i));
+
+        }
+
         esperandoIbsHbox.getChildren().clear();
         for (int i = 0; i < esperandoIbs.size(); i++) {
             esperandoIbsHbox.getChildren().add(Processo.displayIbsProcesso(esperandoIbs.get(i), i));
@@ -464,6 +481,10 @@ public class EscalonadorSceneController implements Initializable {
         abortadosIbsHbox.getChildren().clear();
         for (int i = 0; i < abortadosIbs.size(); i++) {
             abortadosIbsHbox.getChildren().add(Processo.displayIbsProcesso(abortadosIbs.get(i), i));
+        }
+        finalizadosIbsHbox.getChildren().clear();
+        for (int i = 0; i < finalizadosIbs.size(); i++) {
+            finalizadosIbsHbox.getChildren().add(Processo.displayIbsProcesso(finalizadosIbs.get(i), i));
         }
 
     }

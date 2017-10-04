@@ -103,9 +103,9 @@ public class Processo {
         labelPid.setFont(Font.font("Verdana", 10));
         Label labelTempoRestanteDuracao = new Label("TEMPO: " + p.getTempoRestante() + "/" + p.getDuracao());
         labelTempoRestanteDuracao.setFont(Font.font("Verdana", 10));
-        Label labelStart = new Label("START: " + new SimpleDateFormat("HH:mm:ss").format(p.getStartTs()));
+        Label labelStart = new Label("START: " + p.getStart());
         labelStart.setFont(Font.font("Verdana", 10));
-        Label labelEnd = new Label("END: " + new SimpleDateFormat("HH:mm:ss").format(p.getEndTs()));
+        Label labelEnd = new Label("END: " + p.getEnd());
         labelEnd.setFont(Font.font("Verdana", 10));
 
         if (p.getEstado() == Estado.EXECUTANDO.getValor())

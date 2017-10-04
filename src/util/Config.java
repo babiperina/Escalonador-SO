@@ -3,6 +3,7 @@ package util;
 public class Config {
 
     public static int IDS = 0;
+    public static int timeIBS = 0;
 
     public static int SEGUNDO = 1000;
 
