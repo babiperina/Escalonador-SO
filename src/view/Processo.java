@@ -38,7 +38,7 @@ public class Processo {
         if (p.getEstado() == Estado.EXECUTANDO.getValor())
             processo.getChildren().addAll(labelCore, labelPid, new Label(""), labelTempoRestanteDuracao);
         else
-            processo.getChildren().addAll(new Label(""), labelPid, new Label(""), labelTempoRestanteDuracao);
+            processo.getChildren().addAll(labelPid, new Label(""), new Label(""), labelTempoRestanteDuracao);
 
         displayProcesso(processo, p, i);
 
@@ -63,7 +63,7 @@ public class Processo {
         if (p.getEstado() == Estado.EXECUTANDO.getValor())
             processo.getChildren().addAll(labelCore, labelPid, labelQuantum, labelTempoRestanteDuracao);
         else
-            processo.getChildren().addAll(new Label(), labelPid, labelQuantum, labelTempoRestanteDuracao);
+            processo.getChildren().addAll(labelPid, new Label(), labelQuantum, labelTempoRestanteDuracao);
 
         displayProcesso(processo, p, i);
 
@@ -84,9 +84,9 @@ public class Processo {
         labelDeadline.setFont(Font.font("Verdana", 10));
 
         if (p.getEstado() == Estado.EXECUTANDO.getValor())
-            processo.getChildren().addAll(labelCore, labelPid, labelDeadline, labelTempoRestanteDuracao);
+            processo.getChildren().addAll(labelCore, new Label(), labelPid, labelTempoRestanteDuracao);
         else
-            processo.getChildren().addAll(new Label(), labelPid, labelDeadline, labelTempoRestanteDuracao);
+            processo.getChildren().addAll(labelPid, new Label(), labelDeadline, labelTempoRestanteDuracao);
 
         displayProcesso(processo, p, i);
 
@@ -103,13 +103,15 @@ public class Processo {
         labelPid.setFont(Font.font("Verdana", 10));
         Label labelTempoRestanteDuracao = new Label("TEMPO: " + p.getTempoRestante() + "/" + p.getDuracao());
         labelTempoRestanteDuracao.setFont(Font.font("Verdana", 10));
-        Label labelDeadline = new Label("DEADLINE: " + new SimpleDateFormat("HH:mm:ss").format(p.getStartTs()));
-        labelDeadline.setFont(Font.font("Verdana", 10));
+        Label labelStart = new Label("START: " + new SimpleDateFormat("HH:mm:ss").format(p.getStartTs()));
+        labelStart.setFont(Font.font("Verdana", 10));
+        Label labelEnd = new Label("END: " + new SimpleDateFormat("HH:mm:ss").format(p.getEndTs()));
+        labelEnd.setFont(Font.font("Verdana", 10));
 
         if (p.getEstado() == Estado.EXECUTANDO.getValor())
-            processo.getChildren().addAll(labelCore, labelPid, labelDeadline, labelTempoRestanteDuracao);
+            processo.getChildren().addAll(labelCore, labelPid, labelStart, labelEnd, labelTempoRestanteDuracao);
         else
-            processo.getChildren().addAll(new Label(), labelPid, labelDeadline, labelTempoRestanteDuracao);
+            processo.getChildren().addAll(labelPid, new Label(), labelStart, labelEnd, labelTempoRestanteDuracao);
 
         displayProcesso(processo, p, i);
 

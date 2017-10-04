@@ -49,9 +49,11 @@ public class IbsProcesso extends BaseProcesso {
     }
 
     public void setEndTs() {
-        end = start + new Random().nextInt(20);
+        end = start + new Random().nextInt(21);
         if (end > 24) {
             end = 24;
+        } else if (end == start) {
+            end = start + 1;
         }
         this.endTs = new Timestamp(System.currentTimeMillis() + end * 1000);
     }
