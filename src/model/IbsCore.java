@@ -1,6 +1,5 @@
 package model;
 
-import controller.algoritmos.Ibs;
 import model.enums.Estado;
 import util.Config;
 

@@ -12,6 +12,7 @@ public abstract class BaseProcesso {
     protected Integer tempoRestante;
     protected int estado;
     protected boolean isNovo;
+    protected final int size;
 
     public BaseProcesso() {
         setId();
@@ -19,6 +20,16 @@ public abstract class BaseProcesso {
         setTempoRestante();
         setEstado(this.estado = Estado.APTO.getValor());
         this.isNovo = true;
+        int size;
+        do {
+            size = new Random().nextInt(1024) + 1;
+        } while (!(size >= 32 && size <= 1024));
+        this.size = size;
+        System.out.println("Criado processo de tamanho: " + size);
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public int getId() {

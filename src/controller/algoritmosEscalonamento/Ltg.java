@@ -1,4 +1,4 @@
-package controller.algoritmos;
+package controller.algoritmosEscalonamento;
 
 import model.LtgProcesso;
 import model.enums.Estado;

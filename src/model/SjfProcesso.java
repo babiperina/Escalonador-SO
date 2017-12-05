@@ -17,6 +17,6 @@ public class SjfProcesso extends BaseProcesso {
 
     @Override
     public String toString() {
-        return "Processo [ PID:" + id + " \tDURAÇÃO:" + duracao + " \tTEMPO RESTANTE:" + tempoRestante + " \tESTADO:" + estado + " ]";
+        return "Processo [ PID:" + id + " \tDURAÇÃO:" + duracao + " \tTEMPO RESTANTE:" + tempoRestante + " \tESTADO:" + estado + " \tSIZE:" + size + "kb ]";
     }
 }

@@ -1,9 +1,9 @@
 package controller;
 
-import controller.algoritmos.Ibs;
-import controller.algoritmos.Ltg;
-import controller.algoritmos.Rr;
-import controller.algoritmos.Sjf;
+import controller.algoritmosEscalonamento.Ibs;
+import controller.algoritmosEscalonamento.Ltg;
+import controller.algoritmosEscalonamento.Rr;
+import controller.algoritmosEscalonamento.Sjf;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,10 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.HBox;
-import model.IbsProcesso;
-import model.LtgProcesso;
-import model.RrProcesso;
-import model.SjfProcesso;
+import model.*;
 import util.Config;
 import view.Processo;
 
@@ -59,6 +56,10 @@ public class EscalonadorSceneController implements Initializable {
 
         thread.start();
     }
+
+
+    @FXML
+    HBox memoria;
 
     //SJF Algoritmo
     private Sjf sjf;
@@ -106,6 +107,10 @@ public class EscalonadorSceneController implements Initializable {
                             aptosSjf = sjf.getAptos();
                             finalizadosSjf = sjf.getFinalizados();
                             atualizarInterfaceSjf();
+                            if (paneSjf.isExpanded()){
+                                //printar memoria pelo SJF
+                                printMemoriaDoSjf();
+                            }
                         }
                     });
                     verificarStatusBotaoIniciar();
@@ -119,6 +124,18 @@ public class EscalonadorSceneController implements Initializable {
         });
 
         thread.start();
+
+    }
+
+    private void printMemoriaDoSjf(){
+        Memoria m = sjf.getMemoria();
+
+        memoria.getChildren().clear();
+        for (Bloco b :
+                m.getBlocos()) {
+            memoria.getChildren().add(view.Memoria.displayBloco(b));
+        }
+        memoria.getChildren().add(view.Memoria.displayMemoriaNaoAlocada(m.getMemoriaLivre()));
 
     }
 
@@ -153,6 +170,7 @@ public class EscalonadorSceneController implements Initializable {
         if (!Config.SJF_IS_RUNNING)
             iniciarSjfButton.setDisable(false);
     }
+
 
 
     //LTG Algoritmo
@@ -497,6 +515,7 @@ public class EscalonadorSceneController implements Initializable {
         if (!Config.IBS_IS_RUNNING)
             iniciarIbsButton.setDisable(false);
     }
+
 
 
 }

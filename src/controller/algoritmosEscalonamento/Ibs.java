@@ -1,11 +1,10 @@
-package controller.algoritmos;
+package controller.algoritmosEscalonamento;
 
 import model.IbsCore;
 import model.IbsProcesso;
 import model.enums.Estado;
 import util.Config;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class Ibs {
@@ -83,7 +82,7 @@ public class Ibs {
         esperando.add(processo);
     }
 
-    private void ordenar() {
+    public void ordenar() {
         esperando.sort((p1, p2) -> p1.getEnd().compareTo(p2.getEnd()));
 
     }

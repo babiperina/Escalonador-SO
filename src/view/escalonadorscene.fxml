@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.EscalonadorSceneController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.EscalonadorSceneController">
   <bottom>
     <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
       <children>
@@ -19,318 +19,337 @@
     </HBox>
   </bottom>
   <center>
-    <Accordion BorderPane.alignment="CENTER">
-      <panes>
-        <TitledPane fx:id="paneSjf" text="SHORTEST JOB FIRST">
+    <BorderPane prefHeight="200.0" prefWidth="200.0">
+      <center>
+        <Accordion BorderPane.alignment="CENTER">
+          <panes>
+            <TitledPane fx:id="paneSjf" text="SHORTEST JOB FIRST">
+              <content>
+                <GridPane vgap="20.0">
+                  <children>
+                    <TitledPane animated="false" collapsible="false" maxHeight="200.0" prefHeight="200.0" text="CORES">
+                      <content>
+                        <ScrollPane>
+                          <content>
+                            <HBox fx:id="coresSjfHbox" spacing="5.0">
+                              <padding>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane animated="false" collapsible="false" maxHeight="200.0" prefHeight="200.0" text="APTOS" GridPane.rowIndex="1">
+                      <content>
+                        <ScrollPane>
+                          <content>
+                            <HBox fx:id="aptosSjfHbox" spacing="5.0">
+                              <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane animated="false" collapsible="false" maxHeight="200.0" prefHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
+                      <content>
+                        <ScrollPane>
+                          <content>
+                            <HBox fx:id="finalizadosSjfHbox" spacing="5.0">
+                              <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+              </content>
+            </TitledPane>
+            <TitledPane fx:id="paneRr" text="ROUND ROBIN">
+              <content>
+                <GridPane vgap="20.0">
+                  <children>
+                    <TitledPane animated="false" collapsible="false" maxHeight="200.0" prefHeight="200.0" text="CORES">
+                      <content>
+                        <ScrollPane>
+                          <content>
+                            <HBox fx:id="coresRrHbox" spacing="5.0">
+                              <padding>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane animated="false" collapsible="false" maxHeight="200.0" prefHeight="200.0" text="APTOS" GridPane.rowIndex="1">
+                      <content>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Geral">
+                              <content>
+                                <ScrollPane prefViewportHeight="16.0" prefViewportWidth="376.0">
+                                  <content>
+                                    <HBox fx:id="aptosRrHbox" spacing="5.0">
+                                      <padding>
+                                        <Insets left="5.0" right="5.0" top="5.0" />
+                                      </padding>
+                                    </HBox>
+                                  </content>
+                                </ScrollPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Prioridade 0">
+                              <content>
+                                <ScrollPane>
+                                  <content>
+                                    <HBox fx:id="prioridadeZeroHbox" spacing="5.0">
+                                      <padding>
+                                        <Insets left="5.0" right="5.0" top="5.0" />
+                                      </padding>
+                                    </HBox>
+                                  </content>
+                                </ScrollPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Prioridade 1">
+                              <content>
+                                <ScrollPane>
+                                  <content>
+                                    <HBox fx:id="prioridadeUmHbox" spacing="5.0">
+                                      <padding>
+                                        <Insets left="5.0" right="5.0" top="5.0" />
+                                      </padding>
+                                    </HBox>
+                                  </content>
+                                </ScrollPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Prioridade 2">
+                              <content>
+                                <ScrollPane>
+                                  <content>
+                                    <HBox fx:id="prioridadeDoisHbox" spacing="5.0">
+                                      <padding>
+                                        <Insets left="5.0" right="5.0" top="5.0" />
+                                      </padding>
+                                    </HBox>
+                                  </content>
+                                </ScrollPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Prioridade 3">
+                              <content>
+                                <ScrollPane>
+                                  <content>
+                                    <HBox fx:id="prioridadeTresHbox" spacing="5.0">
+                                      <padding>
+                                        <Insets left="5.0" right="5.0" top="5.0" />
+                                      </padding>
+                                    </HBox>
+                                  </content>
+                                </ScrollPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane animated="false" collapsible="false" maxHeight="200.0" prefHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
+                      <content>
+                        <ScrollPane>
+                          <content>
+                            <HBox fx:id="finalizadosRrHbox" spacing="5.0">
+                              <padding>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+              </content>
+            </TitledPane>
+            <TitledPane fx:id="paneLtg" text="LEAST TIME TO GO">
+              <content>
+                <GridPane>
+                  <children>
+                    <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="CORES">
+                      <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <HBox fx:id="coresLtgHbox" spacing="5.0">
+                              <padding>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="APTOS" GridPane.rowIndex="1">
+                      <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <HBox fx:id="aptosLtgHbox" spacing="5.0">
+                              <padding>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
+                      <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <HBox fx:id="finalizadosLtgHbox" spacing="5.0">
+                              <padding>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="ABORTADOS" GridPane.rowIndex="3">
+                      <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <HBox fx:id="abortadosLtgHbox" spacing="5.0">
+                              <padding>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+              </content>
+            </TitledPane>
+            <TitledPane fx:id="paneIbs" disable="false" text="INTERVAL BASED SCHEDULING" visible="false">
+              <content>
+                <GridPane>
+                  <children>
+                    <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="ESPERANDO" GridPane.rowIndex="1">
+                      <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <HBox fx:id="esperandoIbsHbox" spacing="5.0">
+                              <padding>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
+                      <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <HBox fx:id="finalizadosIbsHbox" spacing="5.0">
+                              <padding>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="ABORTADOS" GridPane.rowIndex="3">
+                      <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <HBox fx:id="abortadosIbsHbox" spacing="5.0">
+                              <padding>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="CORES">
+                      <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <HBox fx:id="executandoIbsHbox" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
+                              <padding>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                            </HBox>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+              </content>
+            </TitledPane>
+          </panes>
+        </Accordion>
+      </center>
+      <top>
+        <TitledPane animated="false" collapsible="false" expanded="true" prefHeight="150.0" prefWidth="-1.0" text="Memória">
           <content>
-            <GridPane vgap="20.0">
-              <children>
-                <TitledPane animated="false" collapsible="false" maxHeight="200.0" prefHeight="200.0" text="CORES">
-                  <content>
-                    <ScrollPane>
-                      <content>
-                        <HBox fx:id="coresSjfHbox" spacing="5.0">
-                          <padding>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-                <TitledPane animated="false" collapsible="false" maxHeight="200.0" prefHeight="200.0" text="APTOS" GridPane.rowIndex="1">
-                  <content>
-                    <ScrollPane>
-                      <content>
-                        <HBox fx:id="aptosSjfHbox" spacing="5.0">
-                          <padding>
-                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-                <TitledPane animated="false" collapsible="false" maxHeight="200.0" prefHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
-                  <content>
-                    <ScrollPane>
-                      <content>
-                        <HBox fx:id="finalizadosSjfHbox" spacing="5.0">
-                          <padding>
-                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-              </children>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
+            <ScrollPane hbarPolicy="AS_NEEDED" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER">
+              <content>
+                <HBox fx:id="memoria" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
+                  <padding>
+                    <Insets left="5.0" right="5.0" top="5.0" />
+                  </padding>
+                </HBox>
+              </content>
+            </ScrollPane>
           </content>
         </TitledPane>
-        <TitledPane fx:id="paneRr" text="ROUND ROBIN">
-          <content>
-            <GridPane vgap="20.0">
-              <children>
-                <TitledPane animated="false" collapsible="false" maxHeight="200.0" prefHeight="200.0" text="CORES">
-                  <content>
-                    <ScrollPane>
-                      <content>
-                        <HBox fx:id="coresRrHbox" spacing="5.0">
-                          <padding>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-                <TitledPane animated="false" collapsible="false" maxHeight="200.0" prefHeight="200.0" text="APTOS" GridPane.rowIndex="1">
-                  <content>
-                    <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-                      <tabs>
-                        <Tab text="Geral">
-                          <content>
-                            <ScrollPane prefViewportHeight="16.0" prefViewportWidth="376.0">
-                              <content>
-                                <HBox fx:id="aptosRrHbox" spacing="5.0">
-                                  <padding>
-                                    <Insets left="5.0" right="5.0" top="5.0" />
-                                  </padding>
-                                </HBox>
-                              </content>
-                            </ScrollPane>
-                          </content>
-                        </Tab>
-                        <Tab text="Prioridade 0">
-                          <content>
-                            <ScrollPane>
-                              <content>
-                                <HBox fx:id="prioridadeZeroHbox" spacing="5.0">
-                                  <padding>
-                                    <Insets left="5.0" right="5.0" top="5.0" />
-                                  </padding>
-                                </HBox>
-                              </content>
-                            </ScrollPane>
-                          </content>
-                        </Tab>
-                        <Tab text="Prioridade 1">
-                          <content>
-                            <ScrollPane>
-                              <content>
-                                <HBox fx:id="prioridadeUmHbox" spacing="5.0">
-                                  <padding>
-                                    <Insets left="5.0" right="5.0" top="5.0" />
-                                  </padding>
-                                </HBox>
-                              </content>
-                            </ScrollPane>
-                          </content>
-                        </Tab>
-                        <Tab text="Prioridade 2">
-                          <content>
-                            <ScrollPane>
-                              <content>
-                                <HBox fx:id="prioridadeDoisHbox" spacing="5.0">
-                                  <padding>
-                                    <Insets left="5.0" right="5.0" top="5.0" />
-                                  </padding>
-                                </HBox>
-                              </content>
-                            </ScrollPane>
-                          </content>
-                        </Tab>
-                        <Tab text="Prioridade 3">
-                          <content>
-                            <ScrollPane>
-                              <content>
-                                <HBox fx:id="prioridadeTresHbox" spacing="5.0">
-                                  <padding>
-                                    <Insets left="5.0" right="5.0" top="5.0" />
-                                  </padding>
-                                </HBox>
-                              </content>
-                            </ScrollPane>
-                          </content>
-                        </Tab>
-                      </tabs>
-                    </TabPane>
-                  </content>
-                </TitledPane>
-                <TitledPane animated="false" collapsible="false" maxHeight="200.0" prefHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
-                  <content>
-                    <ScrollPane>
-                      <content>
-                        <HBox fx:id="finalizadosRrHbox" spacing="5.0">
-                          <padding>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-              </children>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-          </content>
-        </TitledPane>
-        <TitledPane fx:id="paneLtg" text="LEAST TIME TO GO">
-          <content>
-            <GridPane>
-              <children>
-                <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="CORES">
-                  <content>
-                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                      <content>
-                        <HBox fx:id="coresLtgHbox" spacing="5.0">
-                          <padding>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-                <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="APTOS" GridPane.rowIndex="1">
-                  <content>
-                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                      <content>
-                        <HBox fx:id="aptosLtgHbox" spacing="5.0">
-                          <padding>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-                <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
-                  <content>
-                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                      <content>
-                        <HBox fx:id="finalizadosLtgHbox" spacing="5.0">
-                          <padding>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-                <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="ABORTADOS" GridPane.rowIndex="3">
-                  <content>
-                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                      <content>
-                        <HBox fx:id="abortadosLtgHbox" spacing="5.0">
-                          <padding>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-              </children>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-          </content>
-        </TitledPane>
-        <TitledPane fx:id="paneIbs" text="INTERVAL BASED SCHEDULING">
-          <content>
-            <GridPane>
-              <children>
-                <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="ESPERANDO" GridPane.rowIndex="1">
-                  <content>
-                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                      <content>
-                        <HBox fx:id="esperandoIbsHbox" spacing="5.0">
-                          <padding>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-                <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="FINALIZADOS" GridPane.rowIndex="2">
-                  <content>
-                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                      <content>
-                        <HBox fx:id="finalizadosIbsHbox" spacing="5.0">
-                          <padding>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-                <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="ABORTADOS" GridPane.rowIndex="3">
-                  <content>
-                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                      <content>
-                        <HBox fx:id="abortadosIbsHbox" spacing="5.0">
-                          <padding>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-                <TitledPane collapsible="false" maxHeight="200.0" prefHeight="200.0" text="CORES">
-                  <content>
-                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                      <content>
-                        <HBox fx:id="executandoIbsHbox" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
-                          <padding>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </TitledPane>
-              </children>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-          </content>
-        </TitledPane>
-      </panes>
-    </Accordion>
+      </top>
+    </BorderPane>
   </center>
   <left>
     <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="null" BorderPane.alignment="CENTER">
@@ -342,7 +361,7 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
                     <Label layoutX="78.0" layoutY="25.0" text="CORES" />
-                    <Slider fx:id="coresSjfSlider" blockIncrement="1.0" layoutX="30.0" layoutY="40.0" majorTickUnit="5.0" max="64.0" min="1.0" showTickLabels="true" showTickMarks="true" value="1.0" />
+                    <Slider fx:id="coresSjfSlider" blockIncrement="1.0" layoutX="30.0" layoutY="40.0" majorTickUnit="20.0" max="64.0" min="1.0" showTickLabels="true" showTickMarks="true" value="1.0" />
                     <Label layoutX="34.0" layoutY="80.0" text="PROCESSOS INICIAIS" />
                     <Slider fx:id="piSjfSlider" blockIncrement="5.0" layoutX="30.0" layoutY="98.0" majorTickUnit="30.0" max="300.0" min="1.0" showTickLabels="true" showTickMarks="true" value="1.0" />
                     <Button fx:id="iniciarSjfButton" defaultButton="true" layoutX="33.0" layoutY="216.0" mnemonicParsing="false" onAction="#iniciarSjf" prefHeight="27.0" prefWidth="134.0" text="INICIAR" />
@@ -360,7 +379,7 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
                     <Label layoutX="78.0" layoutY="25.0" text="CORES" />
-                    <Slider fx:id="coresRrSlider" blockIncrement="1.0" layoutX="30.0" layoutY="40.0" majorTickUnit="5.0" max="64.0" min="1.0" showTickLabels="true" showTickMarks="true" value="1.0" />
+                    <Slider fx:id="coresRrSlider" blockIncrement="1.0" layoutX="30.0" layoutY="40.0" majorTickUnit="20.0" max="64.0" min="1.0" showTickLabels="true" showTickMarks="true" value="1.0" />
                     <Label layoutX="34.0" layoutY="80.0" text="PROCESSOS INICIAIS" />
                     <Slider fx:id="piRrSlider" blockIncrement="5.0" layoutX="30.0" layoutY="98.0" majorTickUnit="30.0" max="300.0" min="1.0" showTickLabels="true" showTickMarks="true" value="1.0" />
                     <Button fx:id="addProcessoRrButton" disable="true" font="$x1" layoutX="33.0" layoutY="253.0" mnemonicParsing="false" onAction="#adicionarProcessoAptosRr" prefHeight="27.0" prefWidth="134.0" text="ADICIONAR PROCESSO" />
@@ -385,7 +404,7 @@
                 </AnchorPane>
               </content>
             </Tab>
-            <Tab fx:id="tabIbs" text="IBS">
+            <Tab fx:id="tabIbs" closable="true" disable="true" text="IBS">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
@@ -394,7 +413,7 @@
                     <Label layoutX="34.0" layoutY="80.0" text="PROCESSOS INICIAIS" />
                     <Slider fx:id="piIbsSlider" blockIncrement="5.0" layoutX="30.0" layoutY="98.0" majorTickUnit="30.0" max="300.0" min="1.0" showTickLabels="true" showTickMarks="true" value="1.0" />
                     <Button fx:id="iniciarIbsButton" defaultButton="true" layoutX="33.0" layoutY="216.0" mnemonicParsing="false" onAction="#iniciarIbs" prefHeight="27.0" prefWidth="134.0" text="INICIAR" />
-                    <Button fx:id="addProcessoIbsButton" disable="true" font="$x1" layoutX="33.0" layoutY="253.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="134.0" text="ADICIONAR PROCESSO" />
+                    <Button fx:id="addProcessoIbsButton" disable="true" font="$x1" layoutX="33.0" layoutY="253.0" mnemonicParsing="false" onAction="#adicionarProcessoEsperandoIbs" prefHeight="27.0" prefWidth="134.0" text="ADICIONAR PROCESSO" />
                   </children>
                 </AnchorPane>
               </content>
