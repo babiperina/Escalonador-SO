@@ -30,7 +30,7 @@ public class Memoria {
         b.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
         b.setPadding(new Insets(2, 2, 2, 2));
-        b.setPrefSize(120, 50);
+        b.setPrefSize(60 + bloco.getTamanho()/4, 50);
         return b;
     }
 
@@ -47,7 +47,7 @@ public class Memoria {
         b.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
         b.setPadding(new Insets(2, 2, 2, 2));
-        b.setPrefSize(tamanho, 50);
+        b.setPrefSize(60 + tamanho/4, 50);
         return b;
     }
 }

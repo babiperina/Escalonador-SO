@@ -223,6 +223,10 @@ public class EscalonadorSceneController implements Initializable {
                             finalizadosLtg = ltg.getFinalizados();
                             abortadosLtg = ltg.getAbortados();
                             atualizarInterfaceLtg();
+//                            if (paneLtg.isExpanded()){
+//                                //printar memoria pelo SJF
+//                                printMemoriaDoLtg();
+//                            }
                         }
                     });
                     verificarStatusBotaoIniciarLtg();
@@ -238,6 +242,18 @@ public class EscalonadorSceneController implements Initializable {
         thread.start();
 
     }
+
+//    private void printMemoriaDoLtg(){
+//        Memoria m = ltg.getMemoria();
+//
+//        memoria.getChildren().clear();
+//        for (Bloco b :
+//                m.getBlocos()) {
+//            memoria.getChildren().add(view.Memoria.displayBloco(b));
+//        }
+//        memoria.getChildren().add(view.Memoria.displayMemoriaNaoAlocada(m.getMemoriaLivre()));
+//
+//    }
 
     private void atualizarInterfaceLtg() {
         coresLtgHbox.getChildren().clear();
@@ -340,6 +356,10 @@ public class EscalonadorSceneController implements Initializable {
                             p3 = rr.getP3();
                             finalizadosRr = rr.getFinalizados();
                             atualizarInterfaceRr();
+                            if (paneRr.isExpanded()){
+                                //printar memoria pelo SJF
+                                printMemoriaDoRr();
+                            }
                         }
                     });
                     verificarStatusBotaoIniciarRr();
@@ -353,6 +373,18 @@ public class EscalonadorSceneController implements Initializable {
         });
 
         thread.start();
+
+    }
+
+    private void printMemoriaDoRr(){
+        Memoria m = rr.getMemoria();
+
+        memoria.getChildren().clear();
+        for (Bloco b :
+                m.getBlocos()) {
+            memoria.getChildren().add(view.Memoria.displayBloco(b));
+        }
+        memoria.getChildren().add(view.Memoria.displayMemoriaNaoAlocada(m.getMemoriaLivre()));
 
     }
 

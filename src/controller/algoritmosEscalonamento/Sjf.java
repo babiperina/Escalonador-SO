@@ -40,7 +40,7 @@ public class Sjf {
         }
     }
 
-    private void mudarProcessosDeFila() {
+    private void mudarProcessosDeFilaUsandoBestFit() {
         for (int i = 0; i < cores.length; i++) {
             SjfProcesso processoAtual = cores[i];
 
@@ -64,7 +64,6 @@ public class Sjf {
             SjfProcesso processoAtual = cores[i];
 
             if (processoAtual == null && !aptos.isEmpty()) {
-                //requisicao
                 SjfProcesso processoRequisicao = aptos.remove(0);
                 if (bestFit(processoRequisicao)) {
                     cores[i] = processoRequisicao;
@@ -72,8 +71,6 @@ public class Sjf {
                 } else {
                     System.out.println("OutOfMemory:: " + processoRequisicao.getId() + ", " + processoRequisicao.getSize());
                     processoRequisicao.setEstado(Estado.ABORTADO.getValor());
-
-                    //out of memory
                 }
             }
         }
@@ -167,7 +164,7 @@ public class Sjf {
     public void atualizarAlgoritmo() {
         System.out.println(memoria.toString());
         decrementarTempoRestanteProcessosExecutando();
-        mudarProcessosDeFila();
+        mudarProcessosDeFilaUsandoBestFit();
         desligarAlgoritmo();
     }
 
@@ -195,10 +192,6 @@ public class Sjf {
 
     public Memoria getMemoria() {
         return memoria;
-    }
-
-    public void setMemoria(Memoria memoria) {
-        this.memoria = memoria;
     }
 
     public SjfProcesso[] getCores() {
