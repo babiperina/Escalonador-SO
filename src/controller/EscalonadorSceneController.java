@@ -61,16 +61,22 @@ public class EscalonadorSceneController implements Initializable {
     @FXML
     HBox memoria;
 
+    @FXML
+    TitledPane nameMemoria;
+
     //SJF Algoritmo
     private Sjf sjf;
     private SjfProcesso[] coresSjf;
     private ArrayList<SjfProcesso> aptosSjf;
     private ArrayList<SjfProcesso> finalizadosSjf;
+    private ArrayList<SjfProcesso> abortadosSjf;
 
     @FXML
     Slider coresSjfSlider;
     @FXML
     Slider piSjfSlider;
+    @FXML
+    Slider memoriaSjfSlider;
     @FXML
     Button iniciarSjfButton;
     @FXML
@@ -82,6 +88,8 @@ public class EscalonadorSceneController implements Initializable {
     HBox aptosSjfHbox;
     @FXML
     HBox finalizadosSjfHbox;
+    @FXML
+    HBox abortadosSjfHbox;
 
     @FXML
     TitledPane paneSjf;
@@ -92,7 +100,7 @@ public class EscalonadorSceneController implements Initializable {
         iniciarSjfButton.setDisable(true);
         paneSjf.setExpanded(true);
         addProcessoSjfButton.setDisable(false);
-        sjf = new Sjf((int) coresSjfSlider.getValue(), (int) piSjfSlider.getValue());
+        sjf = new Sjf((int) coresSjfSlider.getValue(), (int) piSjfSlider.getValue(), (int) memoriaSjfSlider.getValue());
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -106,9 +114,9 @@ public class EscalonadorSceneController implements Initializable {
                             coresSjf = sjf.getCores();
                             aptosSjf = sjf.getAptos();
                             finalizadosSjf = sjf.getFinalizados();
+                            abortadosSjf = sjf.getAbortados();
                             atualizarInterfaceSjf();
                             if (paneSjf.isExpanded()){
-                                //printar memoria pelo SJF
                                 printMemoriaDoSjf();
                             }
                         }
@@ -129,6 +137,7 @@ public class EscalonadorSceneController implements Initializable {
 
     private void printMemoriaDoSjf(){
         Memoria m = sjf.getMemoria();
+        nameMemoria.setText("Memória SJF (" + m.getTamanho() + "kb)");
 
         memoria.getChildren().clear();
         for (Bloco b :
@@ -160,6 +169,12 @@ public class EscalonadorSceneController implements Initializable {
             finalizadosSjfHbox.getChildren().add(Processo.displaySjfProcesso(finalizadosSjf.get(i), i));
             finalizadosSjf.get(i).setNovo(false);
         }
+
+        abortadosSjfHbox.getChildren().clear();
+        for (int i = 0; i < abortadosSjf.size(); i++) {
+            abortadosSjfHbox.getChildren().add(Processo.displaySjfProcesso(abortadosSjf.get(i), i));
+            abortadosSjf.get(i).setNovo(false);
+        }
     }
 
     public void adicionarProcessoAptosSjf() {
@@ -186,6 +201,8 @@ public class EscalonadorSceneController implements Initializable {
     @FXML
     Slider piLtgSlider;
     @FXML
+    Slider memoriaLtgSlider;
+    @FXML
     Button iniciarLtgButton;
     @FXML
     Button addProcessoLtgButton;
@@ -207,7 +224,7 @@ public class EscalonadorSceneController implements Initializable {
         iniciarLtgButton.setDisable(true);
         paneLtg.setExpanded(true);
         addProcessoLtgButton.setDisable(false);
-        ltg = new Ltg((int) coresLtgSlider.getValue(), (int) piLtgSlider.getValue());
+        ltg = new Ltg((int) coresLtgSlider.getValue(), (int) piLtgSlider.getValue(), (int) memoriaLtgSlider.getValue());
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -244,6 +261,7 @@ public class EscalonadorSceneController implements Initializable {
 
     private void printMemoriaDoLtg(){
         Memoria m = ltg.getMemoria();
+        nameMemoria.setText("Memória LTG(" + m.getTamanho() + "kb)");
 
         memoria.getChildren().clear();
         for (Bloco b :
@@ -309,6 +327,8 @@ public class EscalonadorSceneController implements Initializable {
     @FXML
     Slider quantumRrSlider;
     @FXML
+    Slider memoriaRrSlider;
+    @FXML
     Button iniciarRrButton;
     @FXML
     Button addProcessoRrButton;
@@ -336,7 +356,7 @@ public class EscalonadorSceneController implements Initializable {
         iniciarRrButton.setDisable(true);
         paneRr.setExpanded(true);
         addProcessoRrButton.setDisable(false);
-        rr = new Rr((int) coresRrSlider.getValue(), (int) piRrSlider.getValue(), (int) quantumRrSlider.getValue());
+        rr = new Rr((int) coresRrSlider.getValue(), (int) piRrSlider.getValue(), (int) quantumRrSlider.getValue(), (int) memoriaRrSlider.getValue());
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -356,7 +376,6 @@ public class EscalonadorSceneController implements Initializable {
                             finalizadosRr = rr.getFinalizados();
                             atualizarInterfaceRr();
                             if (paneRr.isExpanded()){
-                                //printar memoria pelo SJF
                                 printMemoriaDoRr();
                             }
                         }
@@ -377,6 +396,7 @@ public class EscalonadorSceneController implements Initializable {
 
     private void printMemoriaDoRr(){
         Memoria m = rr.getMemoria();
+        nameMemoria.setText("Memória RR(" + m.getTamanho() + "kb)");
 
         memoria.getChildren().clear();
         for (Bloco b :

@@ -18,9 +18,9 @@ public class Ltg {
 
     private Memoria memoria;
 
-    public Ltg(int qtdeCores, int qtdeProcessosIniciais) {
+    public Ltg(int qtdeCores, int qtdeProcessosIniciais, int memoriaSize) {
         Config.LTG_IS_RUNNING = true;
-        memoria = new Memoria(2000);
+        memoria = new Memoria(memoriaSize);
         cores = new LtgProcesso[qtdeCores];
         for (int i = 0; i < qtdeProcessosIniciais; i++) {
             adicionarProcesso(new LtgProcesso());
@@ -100,6 +100,7 @@ public class Ltg {
                 } else {
                     System.out.println("OutOfMemory:: " + processoRequisicao.getId() + ", " + processoRequisicao.getSize());
                     processoRequisicao.setEstado(Estado.ABORTADO.getValor());
+                    abortados.add(processoRequisicao);
                 }
             }
         }

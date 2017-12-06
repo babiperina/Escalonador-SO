@@ -13,11 +13,12 @@ public class Sjf {
     private SjfProcesso[] cores;
     private ArrayList<SjfProcesso> aptos = new ArrayList<>();
     private ArrayList<SjfProcesso> finalizados = new ArrayList<>();
+    private ArrayList<SjfProcesso> abortados = new ArrayList<>();
     private Memoria memoria;
 
-    public Sjf(int qtdeCores, int qtdeProcessosIniciais) {
+    public Sjf(int qtdeCores, int qtdeProcessosIniciais, int memoriaSize) {
         Config.SJF_IS_RUNNING = true;
-        memoria = new Memoria(2000);
+        memoria = new Memoria(memoriaSize);
         cores = new SjfProcesso[qtdeCores];
         for (int i = 0; i < qtdeProcessosIniciais; i++) {
             adicionarProcesso(new SjfProcesso());
@@ -32,6 +33,7 @@ public class Sjf {
             } else {
                 System.out.println("OutOfMemory:: " + processoRequisicao.getId() + ", " + processoRequisicao.getSize());
                 processoRequisicao.setEstado(Estado.ABORTADO.getValor());
+                abortados.add(processoRequisicao);
             }
         }
     }
@@ -79,6 +81,7 @@ public class Sjf {
                 } else {
                     System.out.println("OutOfMemory:: " + processoRequisicao.getId() + ", " + processoRequisicao.getSize());
                     processoRequisicao.setEstado(Estado.ABORTADO.getValor());
+                    abortados.add(processoRequisicao);
                 }
             }
         }
@@ -212,5 +215,9 @@ public class Sjf {
 
     public ArrayList<SjfProcesso> getFinalizados() {
         return finalizados;
+    }
+
+    public ArrayList<SjfProcesso> getAbortados() {
+        return abortados;
     }
 }

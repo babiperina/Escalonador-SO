@@ -22,9 +22,9 @@ public class Rr {
 
     private Memoria memoria;
 
-    public Rr(int qtdeCores, int qtdeProcessosIniciais, int quantum) {
+    public Rr(int qtdeCores, int qtdeProcessosIniciais, int quantum, int memoriaSize) {
         Config.RR_IS_RUNNING = true;
-        memoria = new Memoria(2000);
+        memoria = new Memoria(memoriaSize);
         this.quantum = quantum;
         cores = new RrProcesso[qtdeCores];
 
