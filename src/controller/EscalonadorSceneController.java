@@ -347,6 +347,8 @@ public class EscalonadorSceneController implements Initializable {
     HBox prioridadeTresHbox;
     @FXML
     HBox finalizadosRrHbox;
+    @FXML
+    HBox abortadosRrHbox;
 
     @FXML
     TitledPane paneRr;
@@ -374,6 +376,7 @@ public class EscalonadorSceneController implements Initializable {
                             p2 = rr.getP2();
                             p3 = rr.getP3();
                             finalizadosRr = rr.getFinalizados();
+                            abortadosRr = rr.getAbortados();
                             atualizarInterfaceRr();
                             if (paneRr.isExpanded()){
                                 printMemoriaDoRr();
@@ -446,6 +449,11 @@ public class EscalonadorSceneController implements Initializable {
         finalizadosRrHbox.getChildren().clear();
         for (int i = 0; i < finalizadosRr.size(); i++) {
             finalizadosRrHbox.getChildren().add(Processo.displayRrProcesso(finalizadosRr.get(i), i));
+        }
+
+        abortadosRrHbox.getChildren().clear();
+        for (int i = 0; i < abortadosRr.size(); i++) {
+            abortadosRrHbox.getChildren().add(Processo.displayRrProcesso(abortadosRr.get(i), i));
         }
     }
 

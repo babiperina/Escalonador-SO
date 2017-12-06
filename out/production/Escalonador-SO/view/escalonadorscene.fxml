@@ -46,7 +46,7 @@
                           <content>
                             <HBox fx:id="aptosSjfHbox" spacing="5.0">
                               <padding>
-                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x2" />
                               </padding>
                             </HBox>
                           </content>
@@ -59,7 +59,7 @@
                           <content>
                             <HBox fx:id="finalizadosSjfHbox" spacing="5.0">
                               <padding>
-                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x2" />
                               </padding>
                             </HBox>
                           </content>
@@ -72,7 +72,7 @@
                           <content>
                             <HBox id="HBox" fx:id="abortadosSjfHbox" alignment="CENTER" spacing="5.0">
                               <padding>
-                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x2" />
                               </padding>
                             </HBox>
                           </content>
@@ -199,7 +199,7 @@
                       <content>
                         <ScrollPane prefHeight="200.0" prefWidth="200.0">
                           <content>
-                            <HBox prefHeight="100.0" prefWidth="200.0" />
+                            <HBox fx:id="abortadosRrHbox" padding="$x2" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0" />
                           </content>
                         </ScrollPane>
                       </content>

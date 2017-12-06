@@ -19,6 +19,7 @@ public class Rr {
     ArrayList<RrProcesso> P2 = new ArrayList<>();
     ArrayList<RrProcesso> P3 = new ArrayList<>();
     ArrayList<RrProcesso> finalizados = new ArrayList<>();
+    ArrayList<RrProcesso> abortados = new ArrayList<>();
 
     private Memoria memoria;
 
@@ -43,6 +44,7 @@ public class Rr {
             } else {
                 System.out.println("OutOfMemory:: " + processoRequisicao.getId() + ", " + processoRequisicao.getSize());
                 processoRequisicao.setEstado(Estado.ABORTADO.getValor());
+                abortados.add(processoRequisicao);
             }
         }
     }
@@ -154,6 +156,7 @@ public class Rr {
                 } else {
                     System.out.println("OutOfMemory:: " + processoRequisicao.getId() + ", " + processoRequisicao.getSize());
                     processoRequisicao.setEstado(Estado.ABORTADO.getValor());
+                    abortados.add(processoRequisicao);
                 }
             }
         }
@@ -321,5 +324,9 @@ public class Rr {
 
     public ArrayList<RrProcesso> getFinalizados() {
         return finalizados;
+    }
+
+    public ArrayList<RrProcesso> getAbortados() {
+        return abortados;
     }
 }
