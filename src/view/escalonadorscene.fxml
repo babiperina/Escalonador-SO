@@ -361,15 +361,28 @@
       <top>
         <TitledPane id="idNameMemoria" fx:id="nameMemoria" animated="false" collapsible="false" expanded="true" prefHeight="150.0" prefWidth="-1.0" text="Memória">
           <content>
-            <ScrollPane hbarPolicy="AS_NEEDED" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER">
-              <content>
-                <HBox fx:id="memoria" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
-                  <padding>
-                    <Insets left="5.0" right="5.0" top="5.0" />
-                  </padding>
-                </HBox>
-              </content>
-            </ScrollPane>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Best Fit">
+                  <content>
+                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                      <content>
+                        <HBox fx:id="memoria" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
+                          <padding>
+                            <Insets left="5.0" right="5.0" top="5.0" />
+                          </padding>
+                        </HBox>
+                      </content>
+                    </ScrollPane>
+                  </content>
+                </Tab>
+                <Tab text="Quick Fit">
+                  <content>
+                    <HBox fx:id="memoriaQf" prefHeight="100.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
           </content>
         </TitledPane>
       </top>
@@ -394,7 +407,6 @@
                         <Font size="9.0" fx:id="x1" />
                       </font>
                     </Button>
-                    <Button fx:id="escolherGmSjf" layoutX="33.0" layoutY="384.0" mnemonicParsing="false" prefWidth="134.0" text="Best Fit" />
                     <Label layoutX="30.0" layoutY="146.0" text="TAMANHO MEMÓRIA" />
                     <Slider id="memoriaLtgSlider" fx:id="memoriaSjfSlider" layoutX="34.0" layoutY="172.0" majorTickUnit="1000.0" max="20000.0" min="10000.0" minorTickCount="500" showTickLabels="true" showTickMarks="true" />
                   </children>
@@ -413,7 +425,6 @@
                     <Button fx:id="iniciarRrButton" defaultButton="true" layoutX="33.0" layoutY="253.0" mnemonicParsing="false" onAction="#iniciarRr" prefHeight="27.0" prefWidth="134.0" text="INICIAR" />
                     <Label layoutX="67.0" layoutY="137.0" text="QUANTUM" />
                     <Slider fx:id="quantumRrSlider" blockIncrement="1.0" layoutX="31.0" layoutY="152.0" majorTickUnit="5.0" max="20.0" min="2.0" minorTickCount="4" showTickLabels="true" showTickMarks="true" value="2.0" />
-                    <Button fx:id="escolherGmRr" layoutX="33.0" layoutY="384.0" mnemonicParsing="false" prefWidth="134.0" text="Best Fit" />
                     <Label layoutX="30.0" layoutY="192.0" text="TAMANHO MEMÓRIA" />
                     <Slider fx:id="memoriaRrSlider" layoutX="31.0" layoutY="212.0" majorTickUnit="1000.0" max="20000.0" min="10000.0" minorTickCount="500" showTickLabels="true" showTickMarks="true" />
                   </children>
@@ -430,7 +441,6 @@
                     <Slider fx:id="piLtgSlider" blockIncrement="5.0" layoutX="30.0" layoutY="98.0" majorTickUnit="30.0" max="300.0" min="1.0" showTickLabels="true" showTickMarks="true" value="1.0" />
                     <Button fx:id="iniciarLtgButton" defaultButton="true" layoutX="33.0" layoutY="253.0" mnemonicParsing="false" onAction="#iniciarLtg" prefHeight="27.0" prefWidth="134.0" text="INICIAR" />
                     <Button fx:id="addProcessoLtgButton" disable="true" font="$x1" layoutX="33.0" layoutY="290.0" mnemonicParsing="false" onAction="#adicionarProcessoAptosLtg" prefHeight="27.0" prefWidth="134.0" text="ADICIONAR PROCESSO" />
-                    <Button fx:id="escolherGmLtg" layoutX="33.0" layoutY="384.0" mnemonicParsing="false" prefWidth="134.0" text="Best Fit" />
                     <Label layoutX="30.0" layoutY="146.0" text="TAMANHO MEMÓRIA" />
                     <Slider fx:id="memoriaLtgSlider" layoutX="34.0" layoutY="178.0" majorTickUnit="1000.0" max="20000.0" min="10000.0" minorTickCount="500" showTickLabels="true" showTickMarks="true" />
                   </children>
