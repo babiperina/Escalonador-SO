@@ -1,6 +1,8 @@
 package controller.algoritmosEscalonamento;
 
+import model.Bloco;
 import model.LtgProcesso;
+import model.Memoria;
 import model.enums.Estado;
 import util.Config;
 
@@ -14,15 +16,26 @@ public class Ltg {
     ArrayList<LtgProcesso> finalizados = new ArrayList<>();
     ArrayList<LtgProcesso> abortados = new ArrayList<>();
 
+    private Memoria memoria;
+
     public Ltg(int qtdeCores, int qtdeProcessosIniciais) {
         Config.LTG_IS_RUNNING = true;
+        memoria = new Memoria(2000);
         cores = new LtgProcesso[qtdeCores];
         for (int i = 0; i < qtdeProcessosIniciais; i++) {
             adicionarProcesso(new LtgProcesso());
         }
         for (int i = 0; i < cores.length && !aptos.isEmpty(); i++) {
-            cores[i] = aptos.remove(0);
-            cores[i].setEstado(Estado.EXECUTANDO.getValor());
+//            cores[i] = aptos.remove(0);
+//            cores[i].setEstado(Estado.EXECUTANDO.getValor());
+            LtgProcesso processoRequisicao = aptos.remove(0);
+            if (bestFit(processoRequisicao)) {
+                cores[i] = processoRequisicao;
+                cores[i].setEstado(Estado.EXECUTANDO.getValor());
+            } else {
+                System.out.println("OutOfMemory:: " + processoRequisicao.getId() + ", " + processoRequisicao.getSize());
+                processoRequisicao.setEstado(Estado.ABORTADO.getValor());
+            }
         }
     }
 
@@ -52,12 +65,22 @@ public class Ltg {
         }
     }
 
-    private void mudarProcessosDeFila() {
+    private void mudarProcessosDeFilaUsandoBestFit() {
         for (int i = 0; i < cores.length; i++) {
             LtgProcesso processoAtual = cores[i];
 
             if (processoAtual != null) {
                 if (processoAtual.getEstado() == Estado.FINALIZADO.getValor()) {
+//                    finalizados.add(processoAtual);
+//                    cores[i] = null;
+                    for (Bloco c :
+                            memoria.getBlocos()) {
+                        if(c.getProcesso() != null)
+                            if (c.getProcesso().getId() == processoAtual.getId()) {
+                                c.setLivre(true);
+                                c.addProcesso(null);
+                            }
+                    }
                     finalizados.add(processoAtual);
                     cores[i] = null;
                 }
@@ -68,10 +91,86 @@ public class Ltg {
             LtgProcesso processoAtual = cores[i];
 
             if (processoAtual == null && !aptos.isEmpty()) {
-                cores[i] = aptos.remove(0);
-                cores[i].setEstado(Estado.EXECUTANDO.getValor());
+//                cores[i] = aptos.remove(0);
+//                cores[i].setEstado(Estado.EXECUTANDO.getValor());
+                LtgProcesso processoRequisicao = aptos.remove(0);
+                if (bestFit(processoRequisicao)) {
+                    cores[i] = processoRequisicao;
+                    cores[i].setEstado(Estado.EXECUTANDO.getValor());
+                } else {
+                    System.out.println("OutOfMemory:: " + processoRequisicao.getId() + ", " + processoRequisicao.getSize());
+                    processoRequisicao.setEstado(Estado.ABORTADO.getValor());
+                }
             }
         }
+
+    }
+
+    public boolean bestFit(LtgProcesso processo) {
+        boolean success = false;
+
+        if (memoria.getBlocos().size() == 0) {
+            memoria.getBlocos().add(new Bloco(1, processo.getSize(), processo));
+            memoria.setMemoriaLivre(memoria.getMemoriaLivre() - processo.getSize());
+            success = true;
+        } else {
+            if (existeMemoriaLivre() || existeBlocoLivre()) {
+                if (existeMemoriaSuficienteLivre(processo.getSize())) {
+                    memoria.getBlocos().add(new Bloco(memoria.getBlocos().size() + 1, processo.getSize(), processo));
+                    memoria.setMemoriaLivre(memoria.getMemoriaLivre() - processo.getSize());
+                    success = true;
+                } else {
+                    success = auxBestFit(processo);
+                }
+            }
+        }
+
+        return success;
+    }
+
+    public boolean existeMemoriaLivre() {
+        if (memoria.getMemoriaLivre() > 0)
+            return true;
+        return false;
+    }
+
+    public boolean existeMemoriaSuficienteLivre(int tamanhoProcesso) {
+        if (memoria.getMemoriaLivre() >= tamanhoProcesso)
+            return true;
+        return false;
+    }
+
+    public boolean existeBlocoLivre() {
+        for (Bloco b :
+                memoria.getBlocos()) {
+            if (b.isLivre()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean auxBestFit(LtgProcesso processo) {
+        Bloco bloco = null;
+        for (Bloco b :
+                memoria.getBlocos()) {
+            if (b.isLivre()) {
+                if (bloco == null  && b.getTamanho() >= processo.getSize()) {
+                    bloco = b;
+                } else {
+                    if(bloco != null)
+                        if (b.getTamanho() < bloco.getTamanho() && b.getTamanho() >= processo.getSize()) {
+                            bloco = b;
+                        }
+                }
+            }
+        }
+        if (bloco != null) {
+            bloco.addProcesso(processo);
+            bloco.setLivre(false);
+            return true;
+        } else
+            return false;
 
     }
 
@@ -93,7 +192,7 @@ public class Ltg {
     public void atualizarAlgoritmo() {
         decrementarTempoRestanteProcessosExecutando();
         verificarDeadline();
-        mudarProcessosDeFila();
+        mudarProcessosDeFilaUsandoBestFit();
         desligarAlgoritmo();
     }
 
@@ -120,6 +219,10 @@ public class Ltg {
         System.out.println("**********************");
         System.out.println();
 
+    }
+
+    public Memoria getMemoria() {
+        return memoria;
     }
 
     public LtgProcesso[] getCores() {

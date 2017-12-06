@@ -23,8 +23,16 @@ public class Sjf {
             adicionarProcesso(new SjfProcesso());
         }
         for (int i = 0; i < cores.length && !aptos.isEmpty(); i++) {
-            cores[i] = aptos.remove(0);
-            cores[i].setEstado(Estado.EXECUTANDO.getValor());
+//            cores[i] = aptos.remove(0);
+//            cores[i].setEstado(Estado.EXECUTANDO.getValor());
+            SjfProcesso processoRequisicao = aptos.remove(0);
+            if (bestFit(processoRequisicao)) {
+                cores[i] = processoRequisicao;
+                cores[i].setEstado(Estado.EXECUTANDO.getValor());
+            } else {
+                System.out.println("OutOfMemory:: " + processoRequisicao.getId() + ", " + processoRequisicao.getSize());
+                processoRequisicao.setEstado(Estado.ABORTADO.getValor());
+            }
         }
     }
 

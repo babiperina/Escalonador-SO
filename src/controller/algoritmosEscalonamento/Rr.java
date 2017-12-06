@@ -34,8 +34,16 @@ public class Rr {
         }
 
         for (int i = 0; i < cores.length && (!P0.isEmpty() || !P1.isEmpty() || !P2.isEmpty() || !P3.isEmpty()); i++) {
-            cores[i] = pegarProcessoNaFilaCorreta();
-            cores[i].setEstado(Estado.EXECUTANDO.getValor());
+//            cores[i] = pegarProcessoNaFilaCorreta();
+//            cores[i].setEstado(Estado.EXECUTANDO.getValor());
+            RrProcesso processoRequisicao = pegarProcessoNaFilaCorreta();
+            if (bestFit(processoRequisicao)) {
+                cores[i] = processoRequisicao;
+                cores[i].setEstado(Estado.EXECUTANDO.getValor());
+            } else {
+                System.out.println("OutOfMemory:: " + processoRequisicao.getId() + ", " + processoRequisicao.getSize());
+                processoRequisicao.setEstado(Estado.ABORTADO.getValor());
+            }
         }
     }
 

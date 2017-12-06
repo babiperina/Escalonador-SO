@@ -223,10 +223,9 @@ public class EscalonadorSceneController implements Initializable {
                             finalizadosLtg = ltg.getFinalizados();
                             abortadosLtg = ltg.getAbortados();
                             atualizarInterfaceLtg();
-//                            if (paneLtg.isExpanded()){
-//                                //printar memoria pelo SJF
-//                                printMemoriaDoLtg();
-//                            }
+                            if (paneLtg.isExpanded()){
+                                printMemoriaDoLtg();
+                            }
                         }
                     });
                     verificarStatusBotaoIniciarLtg();
@@ -243,17 +242,17 @@ public class EscalonadorSceneController implements Initializable {
 
     }
 
-//    private void printMemoriaDoLtg(){
-//        Memoria m = ltg.getMemoria();
-//
-//        memoria.getChildren().clear();
-//        for (Bloco b :
-//                m.getBlocos()) {
-//            memoria.getChildren().add(view.Memoria.displayBloco(b));
-//        }
-//        memoria.getChildren().add(view.Memoria.displayMemoriaNaoAlocada(m.getMemoriaLivre()));
-//
-//    }
+    private void printMemoriaDoLtg(){
+        Memoria m = ltg.getMemoria();
+
+        memoria.getChildren().clear();
+        for (Bloco b :
+                m.getBlocos()) {
+            memoria.getChildren().add(view.Memoria.displayBloco(b));
+        }
+        memoria.getChildren().add(view.Memoria.displayMemoriaNaoAlocada(m.getMemoriaLivre()));
+
+    }
 
     private void atualizarInterfaceLtg() {
         coresLtgHbox.getChildren().clear();
