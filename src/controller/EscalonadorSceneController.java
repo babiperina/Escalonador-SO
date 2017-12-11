@@ -78,7 +78,13 @@ public class EscalonadorSceneController implements Initializable {
     @FXML
     Slider memoriaSjfSlider;
     @FXML
+    Slider requisicoesSjfSlider;
+    @FXML
+    Slider listasSjfSlider;
+    @FXML
     Button iniciarSjfButton;
+    @FXML
+    Button iniciarSjfButtonQ;
     @FXML
     Button addProcessoSjfButton;
 
@@ -98,6 +104,7 @@ public class EscalonadorSceneController implements Initializable {
     public void iniciarSjf() {
 
         iniciarSjfButton.setDisable(true);
+        iniciarSjfButtonQ.setDisable(true);
         paneSjf.setExpanded(true);
         addProcessoSjfButton.setDisable(false);
         sjf = new Sjf((int) coresSjfSlider.getValue(), (int) piSjfSlider.getValue(), (int) memoriaSjfSlider.getValue());
@@ -117,7 +124,7 @@ public class EscalonadorSceneController implements Initializable {
                             abortadosSjf = sjf.getAbortados();
                             atualizarInterfaceSjf();
                             if (paneSjf.isExpanded()){
-                                printMemoriaDoSjf();
+                                printMemoriaDoSjfBest();
                             }
                         }
                     });
@@ -135,11 +142,79 @@ public class EscalonadorSceneController implements Initializable {
 
     }
 
-    private void printMemoriaDoSjf(){
+    public void iniciarSjfQ() {
+
+        iniciarSjfButton.setDisable(true);
+        iniciarSjfButtonQ.setDisable(true);
+        paneSjf.setExpanded(true);
+        addProcessoSjfButton.setDisable(false);
+        sjf = new Sjf((int) coresSjfSlider.getValue(), (int) piSjfSlider.getValue(), (int) memoriaSjfSlider.getValue(),(int) requisicoesSjfSlider.getValue(),(int) listasSjfSlider.getValue());
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (Config.SJF_IS_RUNNING) {
+
+                    sjf.atualizarAlgoritmo();
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            coresSjf = sjf.getCores();
+                            aptosSjf = sjf.getAptos();
+                            finalizadosSjf = sjf.getFinalizados();
+                            abortadosSjf = sjf.getAbortados();
+                            atualizarInterfaceSjf();
+                            if (paneSjf.isExpanded()){
+                                printMemoriaDoSjfQuick();
+                            }
+                        }
+                    });
+                    verificarStatusBotaoIniciar();
+                    try {
+                        Thread.sleep(Config.SEGUNDO);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        thread.start();
+
+    }
+
+    private void printMemoriaDoSjfQuick(){
         Memoria m = sjf.getMemoria();
-        nameMemoria.setText("Memória SJF (" + m.getTamanho() + "kb)");
+        nameMemoria.setText("Memória SJF QuickFit (" + m.getTamanho() + "kb) Filas: " + m.listas.length + " Requisições Feitas: " + m.getQtdeRequisicoesFeitas());
 
         memoria.getChildren().clear();
+        if(m.listas!= null)
+            for(ListasQF lista: m.listas){
+                if(lista!= null){
+                    for (Bloco b :
+                            lista.getBloco()) {
+                        memoria.getChildren().add(view.Memoria.displayBlocoComCor(b, lista.getR(), lista.getG(), lista.getB()));
+                    }
+                }
+            }
+
+        for (Bloco b :
+                m.getBlocos()) {
+            memoria.getChildren().add(view.Memoria.displayBloco(b));
+        }
+
+
+
+        memoria.getChildren().add(view.Memoria.displayMemoriaNaoAlocada(m.getMemoriaLivre()));
+
+    }
+
+    private void printMemoriaDoSjfBest(){
+        Memoria m = sjf.getMemoria();
+        nameMemoria.setText("Memória SJF BestFit (" + m.getTamanho() + "kb)");
+
+        memoria.getChildren().clear();
+        if(m.listas!= null)
         for(ListasQF lista: m.listas){
             if(lista!= null){
                 for (Bloco b :
@@ -273,7 +348,7 @@ public class EscalonadorSceneController implements Initializable {
 
     private void printMemoriaDoLtg(){
         Memoria m = ltg.getMemoria();
-        nameMemoria.setText("Memória LTG(" + m.getTamanho() + "kb)");
+        nameMemoria.setText("Memória LTG BestFit (" + m.getTamanho() + "kb)");
 
         memoria.getChildren().clear();
         for (Bloco b :
@@ -411,7 +486,7 @@ public class EscalonadorSceneController implements Initializable {
 
     private void printMemoriaDoRr(){
         Memoria m = rr.getMemoria();
-        nameMemoria.setText("Memória RR(" + m.getTamanho() + "kb)");
+        nameMemoria.setText("Memória RR BestFit (" + m.getTamanho() + "kb)");
 
         memoria.getChildren().clear();
         for (Bloco b :

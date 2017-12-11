@@ -3,18 +3,20 @@
   <component name="ChangeListManager">
     <list id="b4ab2775-fbdb-41e5-8bda-d80d2463dc7a" name="teste do ney" comment="" />
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/ListasQF.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/Tamanho.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$2$1.class" afterPath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$2.class" afterPath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$3$1.class" afterPath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$3.class" afterPath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$4$1.class" afterPath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$4$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$4.class" afterPath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$5$1.class" afterPath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$5$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$5.class" afterPath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController.class" afterPath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/EscalonadorSceneController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/algoritmosEscalonamento/Sjf.class" afterPath="$PROJECT_DIR$/out/production/Escalonador-SO/controller/algoritmosEscalonamento/Sjf.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Escalonador-SO/model/Memoria.class" afterPath="$PROJECT_DIR$/out/production/Escalonador-SO/model/Memoria.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Escalonador-SO/view/escalonadorscene.fxml" afterPath="$PROJECT_DIR$/out/production/Escalonador-SO/view/escalonadorscene.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" afterPath="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Sjf.java" afterPath="$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Sjf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Memoria.java" afterPath="$PROJECT_DIR$/src/model/Memoria.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/bases/BaseProcesso.java" afterPath="$PROJECT_DIR$/src/model/bases/BaseProcesso.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/Memoria.java" afterPath="$PROJECT_DIR$/src/view/Memoria.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/escalonadorscene.fxml" afterPath="$PROJECT_DIR$/src/view/escalonadorscene.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -82,14 +84,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Sjf.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Sjf.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Sjf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="21" column="47" lean-forward="false" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+            <state relative-caret-position="3816">
+              <caret line="200" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
               <folding>
-                <element signature="e#14554#14555#0" expanded="true" />
-                <element signature="e#14598#14599#0" expanded="true" />
+                <element signature="e#15881#15882#0" expanded="true" />
+                <element signature="e#15925#15926#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EscalonadorSceneController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EscalonadorSceneController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1299">
-              <caret line="149" column="9" lean-forward="false" selection-start-line="149" selection-start-column="9" selection-end-line="149" selection-end-column="9" />
+            <state relative-caret-position="183">
+              <caret line="488" column="48" lean-forward="false" selection-start-line="488" selection-start-column="48" selection-end-line="488" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,8 +153,8 @@
       <file leaf-file-name="Memoria.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Memoria.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="52" column="37" lean-forward="false" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+            <state relative-caret-position="273">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1469#1470#0" expanded="true" />
@@ -265,12 +267,12 @@
         <option value="$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Ltg.java" />
         <option value="$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Rr.java" />
         <option value="$PROJECT_DIR$/src/model/Tamanho.java" />
-        <option value="$PROJECT_DIR$/src/model/Memoria.java" />
         <option value="$PROJECT_DIR$/src/view/Memoria.java" />
-        <option value="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" />
         <option value="$PROJECT_DIR$/src/model/ListasQF.java" />
         <option value="$PROJECT_DIR$/src/model/bases/BaseProcesso.java" />
         <option value="$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Sjf.java" />
+        <option value="$PROJECT_DIR$/src/model/Memoria.java" />
+        <option value="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" />
       </list>
     </option>
   </component>
@@ -675,13 +677,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java</url>
-          <line>196</line>
+          <line>271</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java</url>
-          <line>317</line>
+          <line>392</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -779,8 +781,8 @@
         <state relative-caret-position="195">
           <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding>
-            <element signature="e#14554#14555#0" expanded="true" />
-            <element signature="e#14598#14599#0" expanded="true" />
+            <element signature="e#15881#15882#0" expanded="true" />
+            <element signature="e#15925#15926#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -882,8 +884,8 @@
         <state relative-caret-position="273">
           <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding>
-            <element signature="e#14554#14555#0" expanded="true" />
-            <element signature="e#14598#14599#0" expanded="true" />
+            <element signature="e#15881#15882#0" expanded="true" />
+            <element signature="e#15925#15926#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -921,8 +923,8 @@
         <state relative-caret-position="2775">
           <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="194" selection-end-column="5" />
           <folding>
-            <element signature="e#14554#14555#0" expanded="true" />
-            <element signature="e#14598#14599#0" expanded="true" />
+            <element signature="e#15881#15882#0" expanded="true" />
+            <element signature="e#15925#15926#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1080,8 +1082,8 @@
         <state relative-caret-position="195">
           <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding>
-            <element signature="e#14554#14555#0" expanded="true" />
-            <element signature="e#14598#14599#0" expanded="true" />
+            <element signature="e#15881#15882#0" expanded="true" />
+            <element signature="e#15925#15926#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1153,56 +1155,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Memoria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="52" column="37" lean-forward="false" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1469#1470#0" expanded="true" />
-            <element signature="e#1515#1516#0" expanded="true" />
-            <element signature="e#1816#1817#0" expanded="true" />
-            <element signature="e#1863#1864#0" expanded="true" />
-            <element signature="e#1908#1909#0" expanded="true" />
-            <element signature="e#1955#1956#0" expanded="true" />
-            <element signature="e#1994#1995#0" expanded="true" />
-            <element signature="e#2032#2033#0" expanded="true" />
-            <element signature="e#2085#2086#0" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2170#2171#0" expanded="true" />
-            <element signature="e#2206#2207#0" expanded="true" />
-            <element signature="e#2428#2429#0" expanded="true" />
-            <element signature="e#2457#2458#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/Processo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="739">
           <caret line="110" column="32" lean-forward="false" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1299">
-          <caret line="149" column="9" lean-forward="false" selection-start-line="149" selection-start-column="9" selection-end-line="149" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/Memoria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="55" column="59" lean-forward="false" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1513010535815" expanded="true" signature="2943:2973" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1241,13 +1198,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/Memoria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="55" column="59" lean-forward="false" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1513010535815" expanded="true" signature="2943:2973" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Sjf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="21" column="47" lean-forward="false" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        <state relative-caret-position="3816">
+          <caret line="200" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
           <folding>
-            <element signature="e#14554#14555#0" expanded="true" />
-            <element signature="e#14598#14599#0" expanded="true" />
+            <element signature="e#15881#15882#0" expanded="true" />
+            <element signature="e#15925#15926#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Memoria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1469#1470#0" expanded="true" />
+            <element signature="e#1515#1516#0" expanded="true" />
+            <element signature="e#1816#1817#0" expanded="true" />
+            <element signature="e#1863#1864#0" expanded="true" />
+            <element signature="e#1908#1909#0" expanded="true" />
+            <element signature="e#1955#1956#0" expanded="true" />
+            <element signature="e#1994#1995#0" expanded="true" />
+            <element signature="e#2032#2033#0" expanded="true" />
+            <element signature="e#2085#2086#0" expanded="true" />
+            <element signature="e#2137#2138#0" expanded="true" />
+            <element signature="e#2170#2171#0" expanded="true" />
+            <element signature="e#2206#2207#0" expanded="true" />
+            <element signature="e#2428#2429#0" expanded="true" />
+            <element signature="e#2457#2458#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="488" column="48" lean-forward="false" selection-start-line="488" selection-start-column="48" selection-end-line="488" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

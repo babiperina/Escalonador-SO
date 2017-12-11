@@ -14,12 +14,13 @@ public class Sjf {
     private ArrayList<SjfProcesso> abortados = new ArrayList<>();
     private Memoria memoria;
     private ArrayList<Tamanho> tamanhos;
-
+    int gerenciadorDeMemoria;
 
     public Sjf(int qtdeCores, int qtdeProcessosIniciais, int memoriaSize) {
+        gerenciadorDeMemoria = 1;
         Config.SJF_IS_RUNNING = true;
         tamanhos = new ArrayList<>();
-        memoria = new Memoria(memoriaSize, 20,6);
+        memoria = new Memoria(memoriaSize);
         cores = new SjfProcesso[qtdeCores];
         for (int i = 0; i < qtdeProcessosIniciais; i++) {
             adicionarProcesso(new SjfProcesso());
@@ -29,6 +30,31 @@ public class Sjf {
 //            cores[i].setEstado(Estado.EXECUTANDO.getValor());
             SjfProcesso processoRequisicao = aptos.remove(0);
             if (bestFit(processoRequisicao)) {
+                cores[i] = processoRequisicao;
+                cores[i].setEstado(Estado.EXECUTANDO.getValor());
+            } else {
+                System.out.println("OutOfMemory:: " + processoRequisicao.getId() + ", " + processoRequisicao.getSize());
+                processoRequisicao.setEstado(Estado.ABORTADO.getValor());
+                abortados.add(processoRequisicao);
+            }
+        }
+    }
+
+
+    public Sjf(int qtdeCores, int qtdeProcessosIniciais, int memoriaSize, int qtdeRequisicoes, int qtdeListas) {
+        gerenciadorDeMemoria = 2;
+        Config.SJF_IS_RUNNING = true;
+        tamanhos = new ArrayList<>();
+        memoria = new Memoria(memoriaSize, qtdeRequisicoes, qtdeListas);
+        cores = new SjfProcesso[qtdeCores];
+        for (int i = 0; i < qtdeProcessosIniciais; i++) {
+            adicionarProcesso(new SjfProcesso());
+        }
+        for (int i = 0; i < cores.length && !aptos.isEmpty(); i++) {
+//            cores[i] = aptos.remove(0);
+//            cores[i].setEstado(Estado.EXECUTANDO.getValor());
+            SjfProcesso processoRequisicao = aptos.remove(0);
+            if (requisicaoQuickFit(processoRequisicao)) {
                 cores[i] = processoRequisicao;
                 cores[i].setEstado(Estado.EXECUTANDO.getValor());
             } else {
@@ -59,11 +85,11 @@ public class Sjf {
                 if (processoAtual.getEstado() == Estado.FINALIZADO.getValor()) {
                     for (Bloco c :
                             memoria.getBlocos()) {
-                        if(c.getProcesso() != null)
-                        if (c.getProcesso().getId() == processoAtual.getId()) {
-                            c.setLivre(true);
-                            c.addProcesso(null);
-                        }
+                        if (c.getProcesso() != null)
+                            if (c.getProcesso().getId() == processoAtual.getId()) {
+                                c.setLivre(true);
+                                c.addProcesso(null);
+                            }
                     }
                     finalizados.add(processoAtual);
                     cores[i] = null;
@@ -138,13 +164,13 @@ public class Sjf {
         for (Bloco b :
                 memoria.getBlocos()) {
             if (b.isLivre()) {
-                if (bloco == null  && b.getTamanho() >= processo.getSize()) {
+                if (bloco == null && b.getTamanho() >= processo.getSize()) {
                     bloco = b;
                 } else {
-                    if(bloco != null)
-                    if (b.getTamanho() < bloco.getTamanho() && b.getTamanho() >= processo.getSize()) {
-                        bloco = b;
-                    }
+                    if (bloco != null)
+                        if (b.getTamanho() < bloco.getTamanho() && b.getTamanho() >= processo.getSize()) {
+                            bloco = b;
+                        }
                 }
             }
         }
@@ -176,8 +202,10 @@ public class Sjf {
     public void atualizarAlgoritmo() {
         System.out.println(memoria.toString());
         decrementarTempoRestanteProcessosExecutando();
-//        mudarProcessosDeFilaUsandoBestFit();
-        mudarProcessosDeFilaUsandoQuickFit();
+        if (gerenciadorDeMemoria == 1)
+            mudarProcessosDeFilaUsandoBestFit();
+        else
+            mudarProcessosDeFilaUsandoQuickFit();
         desligarAlgoritmo();
     }
 
@@ -189,7 +217,7 @@ public class Sjf {
                 if (processoAtual.getEstado() == Estado.FINALIZADO.getValor()) {
                     for (Bloco c :
                             memoria.getBlocos()) {
-                        if(c.getProcesso() != null)
+                        if (c.getProcesso() != null)
                             if (c.getProcesso().getId() == processoAtual.getId()) {
                                 c.setLivre(true);
                                 c.addProcesso(null);
@@ -197,17 +225,17 @@ public class Sjf {
                     }
                     for (ListasQF lista :
                             memoria.listas) {
-                        if(lista != null){
-                           if(lista.getParametro() == processoAtual.getSize()){
-                               for (Bloco b :
-                                       lista.getBloco()) {
-                                   if(b.getProcesso() != null)
-                                       if (b.getProcesso().getId() == processoAtual.getId()) {
-                                           b.setLivre(true);
-                                           b.addProcesso(null);
-                                       }
-                               }
-                           }
+                        if (lista != null) {
+                            if (lista.getParametro() == processoAtual.getSize()) {
+                                for (Bloco b :
+                                        lista.getBloco()) {
+                                    if (b.getProcesso() != null)
+                                        if (b.getProcesso().getId() == processoAtual.getId()) {
+                                            b.setLivre(true);
+                                            b.addProcesso(null);
+                                        }
+                                }
+                            }
                         }
                     }
                     finalizados.add(processoAtual);
@@ -269,7 +297,7 @@ public class Sjf {
             return alocarComQuickFit(processo);
         } else {
             // alocar corretamente os processos levando em consideração as listas.
-           return alocarComQuickFit(processo);
+            return alocarComQuickFit(processo);
 
         }
     }
@@ -280,6 +308,7 @@ public class Sjf {
             System.out.println(tamanho.toString());
         }
     }
+
     public boolean alocarComQuickFit(SjfProcesso processo) {
         if (existeFilaToHim(processo)) {
             if (existeMemoriaLivre() || existeBlocoLivreNaLista(processo)) {
