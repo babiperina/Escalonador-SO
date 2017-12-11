@@ -289,6 +289,10 @@ public class EscalonadorSceneController implements Initializable {
     @FXML
     Slider memoriaLtgSlider;
     @FXML
+    Slider requisicoesLtgSlider;
+    @FXML
+    Slider listasLtgSlider;
+    @FXML
     Button iniciarLtgButton;
     @FXML
     Button iniciarLtgButtonQ;
@@ -354,7 +358,7 @@ public class EscalonadorSceneController implements Initializable {
         iniciarLtgButtonQ.setDisable(true);
         paneLtg.setExpanded(true);
         addProcessoLtgButton.setDisable(false);
-        ltg = new Ltg((int) coresLtgSlider.getValue(), (int) piLtgSlider.getValue(), (int) memoriaLtgSlider.getValue(), 20, 4);
+        ltg = new Ltg((int) coresLtgSlider.getValue(), (int) piLtgSlider.getValue(), (int) memoriaLtgSlider.getValue(), (int) requisicoesLtgSlider.getValue(), (int) listasLtgSlider.getValue());
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -391,7 +395,7 @@ public class EscalonadorSceneController implements Initializable {
 
     private void printMemoriaDoLtgQ() {
         Memoria m = ltg.getMemoria();
-        nameMemoria.setText("Memória LTG QuickFit (" + m.getTamanho() + "kb)");
+        nameMemoria.setText("Memória LTG QuickFit (" + m.getTamanho() + "kb) Filas: " + m.listas.length + " Requisições Feitas: " + m.getQtdeRequisicoesFeitas());
 
         memoria.getChildren().clear();
         if (m.listas != null)
@@ -484,6 +488,10 @@ public class EscalonadorSceneController implements Initializable {
     @FXML
     Slider memoriaRrSlider;
     @FXML
+    Slider requisicoesRrSlider;
+    @FXML
+    Slider listasRrSlider;
+    @FXML
     Button iniciarRrButton;
     @FXML
     Button iniciarRrButtonQ;
@@ -561,7 +569,7 @@ public class EscalonadorSceneController implements Initializable {
         iniciarRrButtonQ.setDisable(true);
         paneRr.setExpanded(true);
         addProcessoRrButton.setDisable(false);
-        rr = new Rr((int) coresRrSlider.getValue(), (int) piRrSlider.getValue(), (int) quantumRrSlider.getValue(), (int) memoriaRrSlider.getValue(), 20, 4);
+        rr = new Rr((int) coresRrSlider.getValue(), (int) piRrSlider.getValue(), (int) quantumRrSlider.getValue(), (int) memoriaRrSlider.getValue(), (int) requisicoesRrSlider.getValue(), (int) listasRrSlider.getValue());
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -615,7 +623,7 @@ public class EscalonadorSceneController implements Initializable {
 
     private void printMemoriaDoRrQ() {
         Memoria m = rr.getMemoria();
-        nameMemoria.setText("Memória RR QuickFit (" + m.getTamanho() + "kb)");
+        nameMemoria.setText("Memória RR QuickFit (" + m.getTamanho() + "kb) Filas: " + m.listas.length + " Requisições Feitas: " + m.getQtdeRequisicoesFeitas());
 
         memoria.getChildren().clear();
         if (m.listas != null)
@@ -801,6 +809,16 @@ public class EscalonadorSceneController implements Initializable {
     private void verificarStatusBotaoIniciarIbs() {
         if (!Config.IBS_IS_RUNNING)
             iniciarIbsButton.setDisable(false);
+    }
+
+    public void abrirSjf(){
+        paneSjf.setExpanded(true);
+    }
+    public void abrirLtg(){
+        paneLtg.setExpanded(true);
+    }
+    public void abrirRr(){
+        paneRr.setExpanded(true);
     }
 
 

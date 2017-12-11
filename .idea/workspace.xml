@@ -4,6 +4,7 @@
     <list id="b4ab2775-fbdb-41e5-8bda-d80d2463dc7a" name="teste do ney" comment="" />
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" afterPath="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/escalonadorscene.fxml" afterPath="$PROJECT_DIR$/src/view/escalonadorscene.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,8 +74,26 @@
       <file leaf-file-name="EscalonadorSceneController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="809" column="0" lean-forward="true" selection-start-line="809" selection-start-column="0" selection-end-line="809" selection-end-column="0" />
+            <state relative-caret-position="488">
+              <caret line="816" column="25" lean-forward="false" selection-start-line="816" selection-start-column="25" selection-end-line="816" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#26493#26494#0" expanded="true" />
+                <element signature="e#26534#26535#0" expanded="true" />
+                <element signature="e#26562#26563#0" expanded="true" />
+                <element signature="e#26603#26604#0" expanded="true" />
+                <element signature="e#26630#26631#0" expanded="true" />
+                <element signature="e#26670#26671#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Rr.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Rr.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="418" column="28" lean-forward="false" selection-start-line="418" selection-start-column="28" selection-end-line="418" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -555,7 +574,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java</url>
-          <line>458</line>
+          <line>462</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -593,6 +612,12 @@
           <caret line="64" column="13" lean-forward="true" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#26493#26494#0" expanded="true" />
+            <element signature="e#26534#26535#0" expanded="true" />
+            <element signature="e#26562#26563#0" expanded="true" />
+            <element signature="e#26603#26604#0" expanded="true" />
+            <element signature="e#26630#26631#0" expanded="true" />
+            <element signature="e#26670#26671#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -739,6 +764,12 @@
           <caret line="135" column="68" lean-forward="false" selection-start-line="135" selection-start-column="68" selection-end-line="135" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#26493#26494#0" expanded="true" />
+            <element signature="e#26534#26535#0" expanded="true" />
+            <element signature="e#26562#26563#0" expanded="true" />
+            <element signature="e#26603#26604#0" expanded="true" />
+            <element signature="e#26630#26631#0" expanded="true" />
+            <element signature="e#26670#26671#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -807,6 +838,12 @@
           <caret line="255" column="7" lean-forward="false" selection-start-line="245" selection-start-column="25" selection-end-line="255" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#26493#26494#0" expanded="true" />
+            <element signature="e#26534#26535#0" expanded="true" />
+            <element signature="e#26562#26563#0" expanded="true" />
+            <element signature="e#26603#26604#0" expanded="true" />
+            <element signature="e#26630#26631#0" expanded="true" />
+            <element signature="e#26670#26671#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -894,6 +931,12 @@
           <caret line="64" column="13" lean-forward="true" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#26493#26494#0" expanded="true" />
+            <element signature="e#26534#26535#0" expanded="true" />
+            <element signature="e#26562#26563#0" expanded="true" />
+            <element signature="e#26603#26604#0" expanded="true" />
+            <element signature="e#26630#26631#0" expanded="true" />
+            <element signature="e#26670#26671#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1036,20 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Rr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4982">
-          <caret line="418" column="28" lean-forward="false" selection-start-line="418" selection-start-column="28" selection-end-line="418" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#14507#14508#0" expanded="true" />
-            <element signature="e#14551#14552#0" expanded="true" />
-            <element signature="e#21620#21621#0" expanded="true" />
-            <element signature="e#21652#21653#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/Processo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
@@ -1123,12 +1152,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Rr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="809" column="0" lean-forward="true" selection-start-line="809" selection-start-column="0" selection-end-line="809" selection-end-column="0" />
+        <state relative-caret-position="585">
+          <caret line="418" column="28" lean-forward="false" selection-start-line="418" selection-start-column="28" selection-end-line="418" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="816" column="25" lean-forward="false" selection-start-line="816" selection-start-column="25" selection-end-line="816" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#26493#26494#0" expanded="true" />
+            <element signature="e#26534#26535#0" expanded="true" />
+            <element signature="e#26562#26563#0" expanded="true" />
+            <element signature="e#26603#26604#0" expanded="true" />
+            <element signature="e#26630#26631#0" expanded="true" />
+            <element signature="e#26670#26671#0" expanded="true" />
           </folding>
         </state>
       </provider>

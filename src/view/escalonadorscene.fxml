@@ -380,7 +380,7 @@
       <center>
         <TabPane fx:id="paneConfig" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
           <tabs>
-            <Tab fx:id="tabSjf" text="SJF">
+            <Tab fx:id="tabSjf" onSelectionChanged="#abrirSjf" text="SJF">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
@@ -405,7 +405,7 @@
                 </AnchorPane>
               </content>
             </Tab>
-            <Tab fx:id="tabRr" text="RR">
+            <Tab fx:id="tabRr" onSelectionChanged="#abrirRr" text="RR">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
@@ -420,23 +420,31 @@
                     <Label layoutX="30.0" layoutY="190.0" text="TAMANHO MEMÓRIA" />
                     <Slider fx:id="memoriaRrSlider" layoutX="31.0" layoutY="206.0" majorTickUnit="10000.0" max="50000.0" min="10000.0" minorTickCount="500" showTickLabels="true" showTickMarks="true" />
                     <Button fx:id="iniciarRrButtonQ" defaultButton="true" layoutX="33.0" layoutY="397.0" mnemonicParsing="false" onAction="#iniciarRrQ" prefWidth="134.0" text="INICIAR QUICK" />
+                    <Label layoutX="56.0" layoutY="248.0" text="REQUISIÇÕES" />
+                    <Slider fx:id="requisicoesRrSlider" layoutX="31.0" layoutY="267.0" majorTickUnit="10.0" max="50.0" min="10.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" />
+                    <Label layoutX="78.0" layoutY="303.0" text="LISTAS" />
+                    <Slider fx:id="listasRrSlider" layoutX="31.0" layoutY="320.0" majorTickUnit="4.0" max="15.0" min="1.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
                   </children>
                 </AnchorPane>
               </content>
             </Tab>
-            <Tab fx:id="tabLtg" text="LTG">
+            <Tab fx:id="tabLtg" onSelectionChanged="#abrirLtg" text="LTG">
               <content>
                 <AnchorPane>
                   <children>
                     <Label layoutX="78.0" layoutY="25.0" text="CORES" />
-                    <Slider fx:id="coresLtgSlider" blockIncrement="1.0" layoutX="30.0" layoutY="40.0" majorTickUnit="5.0" max="64.0" min="1.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" value="1.0" />
+                    <Slider fx:id="coresLtgSlider" blockIncrement="1.0" layoutX="30.0" layoutY="40.0" majorTickUnit="20.0" max="64.0" min="1.0" minorTickCount="3" showTickLabels="true" showTickMarks="true" value="1.0" />
                     <Label layoutX="34.0" layoutY="80.0" text="PROCESSOS INICIAIS" />
                     <Slider fx:id="piLtgSlider" blockIncrement="5.0" layoutX="30.0" layoutY="98.0" majorTickUnit="30.0" max="300.0" min="1.0" showTickLabels="true" showTickMarks="true" value="1.0" />
-                    <Button fx:id="iniciarLtgButton" defaultButton="true" layoutX="33.0" layoutY="322.0" mnemonicParsing="false" onAction="#iniciarLtg" prefHeight="27.0" prefWidth="134.0" text="INICIAR BEST" />
-                    <Button fx:id="addProcessoLtgButton" disable="true" font="$x1" layoutX="33.0" layoutY="388.0" mnemonicParsing="false" onAction="#adicionarProcessoAptosLtg" prefHeight="27.0" prefWidth="134.0" text="ADICIONAR PROCESSO" />
+                    <Button fx:id="iniciarLtgButton" defaultButton="true" layoutX="33.0" layoutY="343.0" mnemonicParsing="false" onAction="#iniciarLtg" prefHeight="27.0" prefWidth="134.0" text="INICIAR BEST" />
+                    <Button fx:id="addProcessoLtgButton" disable="true" font="$x1" layoutX="33.0" layoutY="410.0" mnemonicParsing="false" onAction="#adicionarProcessoAptosLtg" prefHeight="27.0001220703125" prefWidth="134.0" text="ADICIONAR PROCESSO" />
+                    <Button id="iniciarLtgButton" fx:id="iniciarLtgButtonQ" defaultButton="true" layoutX="34.0" layoutY="376.0" mnemonicParsing="false" onAction="#iniciarLtgQ" prefWidth="134.0" text="INICIAR QUICK" />
                     <Label layoutX="30.0" layoutY="146.0" text="TAMANHO MEMÓRIA" />
                     <Slider fx:id="memoriaLtgSlider" layoutX="34.0" layoutY="169.0" majorTickUnit="10000.0" max="50000.0" min="10000.0" minorTickCount="500" showTickLabels="true" showTickMarks="true" />
-                    <Button id="iniciarLtgButton" fx:id="iniciarLtgButtonQ" defaultButton="true" layoutX="34.0" layoutY="355.0" mnemonicParsing="false" onAction="#iniciarLtgQ" prefWidth="134.0" text="INICIAR QUICK" />
+                    <Label layoutX="56.0" layoutY="217.0" text="REQUISIÇÕES" />
+                    <Slider fx:id="requisicoesLtgSlider" layoutX="34.0" layoutY="237.0" majorTickUnit="10.0" max="50.0" min="10.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                    <Label layoutX="78.0" layoutY="276.0" text="LISTAS" />
+                    <Slider fx:id="listasLtgSlider" layoutX="32.0" layoutY="292.0" majorTickUnit="4.0" max="15.0" min="1.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
                   </children>
                 </AnchorPane>
               </content>
