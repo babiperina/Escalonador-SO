@@ -4,8 +4,6 @@
     <list id="b4ab2775-fbdb-41e5-8bda-d80d2463dc7a" name="teste do ney" comment="" />
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" afterPath="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Ltg.java" afterPath="$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Ltg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/escalonadorscene.fxml" afterPath="$PROJECT_DIR$/src/view/escalonadorscene.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,37 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Sjf.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Sjf.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="225" column="20" lean-forward="false" selection-start-line="225" selection-start-column="20" selection-end-line="239" selection-end-column="21" />
-              <folding>
-                <element signature="e#15881#15882#0" expanded="true" />
-                <element signature="e#15925#15926#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ltg.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Ltg.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="284" column="44" lean-forward="true" selection-start-line="284" selection-start-column="44" selection-end-line="284" selection-end-column="44" />
-              <folding>
-                <element signature="e#9592#9593#0" expanded="true" />
-                <element signature="e#9636#9637#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EscalonadorSceneController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EscalonadorSceneController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="359" column="123" lean-forward="false" selection-start-line="359" selection-start-column="123" selection-end-line="359" selection-end-column="123" />
+            <state relative-caret-position="455">
+              <caret line="809" column="0" lean-forward="true" selection-start-line="809" selection-start-column="0" selection-end-line="809" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -170,8 +142,8 @@
         <option value="$PROJECT_DIR$/src/model/Memoria.java" />
         <option value="$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Rr.java" />
         <option value="$PROJECT_DIR$/src/model/bases/BaseProcesso.java" />
-        <option value="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" />
         <option value="$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Ltg.java" />
+        <option value="$PROJECT_DIR$/src/controller/EscalonadorSceneController.java" />
       </list>
     </option>
   </component>
@@ -577,13 +549,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java</url>
-          <line>271</line>
+          <line>269</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java</url>
-          <line>461</line>
+          <line>458</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -1129,20 +1101,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Ltg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="359" column="123" lean-forward="false" selection-start-line="359" selection-start-column="123" selection-end-line="359" selection-end-column="123" />
+        <state relative-caret-position="234">
+          <caret line="284" column="33" lean-forward="false" selection-start-line="284" selection-start-column="33" selection-end-line="284" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#9592#9593#0" expanded="true" />
+            <element signature="e#9636#9637#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Sjf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="225" column="20" lean-forward="false" selection-start-line="225" selection-start-column="20" selection-end-line="239" selection-end-column="21" />
+        <state relative-caret-position="598">
+          <caret line="242" column="17" lean-forward="true" selection-start-line="242" selection-start-column="17" selection-end-line="242" selection-end-column="17" />
           <folding>
             <element signature="e#15881#15882#0" expanded="true" />
             <element signature="e#15925#15926#0" expanded="true" />
@@ -1150,13 +1123,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/algoritmosEscalonamento/Ltg.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/EscalonadorSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="284" column="44" lean-forward="true" selection-start-line="284" selection-start-column="44" selection-end-line="284" selection-end-column="44" />
+        <state relative-caret-position="455">
+          <caret line="809" column="0" lean-forward="true" selection-start-line="809" selection-start-column="0" selection-end-line="809" selection-end-column="0" />
           <folding>
-            <element signature="e#9592#9593#0" expanded="true" />
-            <element signature="e#9636#9637#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
