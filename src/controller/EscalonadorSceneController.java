@@ -294,6 +294,8 @@ public class EscalonadorSceneController implements Initializable {
     @FXML
     Button iniciarLtgButton;
     @FXML
+    Button iniciarLtgButtonQ;
+    @FXML
     Button addProcessoLtgButton;
 
     @FXML
@@ -311,6 +313,7 @@ public class EscalonadorSceneController implements Initializable {
     public void iniciarLtg() {
 
         iniciarLtgButton.setDisable(true);
+        iniciarLtgButtonQ.setDisable(true);
         paneLtg.setExpanded(true);
         addProcessoLtgButton.setDisable(false);
         ltg = new Ltg((int) coresLtgSlider.getValue(), (int) piLtgSlider.getValue(), (int) memoriaLtgSlider.getValue());
@@ -345,6 +348,70 @@ public class EscalonadorSceneController implements Initializable {
         });
 
         thread.start();
+
+    }
+
+    public void iniciarLtgQ() {
+
+        iniciarLtgButton.setDisable(true);
+        iniciarLtgButtonQ.setDisable(true);
+        paneLtg.setExpanded(true);
+        addProcessoLtgButton.setDisable(false);
+        ltg = new Ltg((int) coresLtgSlider.getValue(), (int) piLtgSlider.getValue(), (int) memoriaLtgSlider.getValue(),20,4);
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (Config.LTG_IS_RUNNING) {
+                    ltg.atualizarAlgoritmo();
+
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            coresLtg = ltg.getCores();
+                            aptosLtg = ltg.getAptos();
+                            finalizadosLtg = ltg.getFinalizados();
+                            abortadosLtg = ltg.getAbortados();
+                            atualizarInterfaceLtg();
+                            if (paneLtg.isExpanded()){
+                                printMemoriaDoLtgQ();
+                            }
+                        }
+                    });
+                    verificarStatusBotaoIniciarLtg();
+                    try {
+                        Thread.sleep(Config.SEGUNDO);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        thread.start();
+
+    }
+
+    private void printMemoriaDoLtgQ(){
+        Memoria m = ltg.getMemoria();
+        nameMemoria.setText("Memória LTG QuickFit (" + m.getTamanho() + "kb)");
+
+        memoria.getChildren().clear();
+        if(m.listas!= null)
+            for(ListasQF lista: m.listas){
+                if(lista!= null){
+                    for (Bloco b :
+                            lista.getBloco()) {
+                        memoria.getChildren().add(view.Memoria.displayBlocoComCor(b, lista.getR(), lista.getG(), lista.getB()));
+                    }
+                }
+            }
+
+        for (Bloco b :
+                m.getBlocos()) {
+            memoria.getChildren().add(view.Memoria.displayBloco(b));
+        }
+        memoria.getChildren().add(view.Memoria.displayMemoriaNaoAlocada(m.getMemoriaLivre()));
 
     }
 
