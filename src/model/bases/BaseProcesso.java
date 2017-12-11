@@ -22,8 +22,8 @@ public abstract class BaseProcesso {
         this.isNovo = true;
         int size;
         do {
-            size = new Random().nextInt(300) + 1;
-        } while (!(size >= 200 && size <= 600));
+            size = new Random().nextInt(700) + 1;
+        } while (!(size >= 500 && size <= 700));
         this.size = size;
         System.out.println("Criado processo de tamanho: " + size);
     }

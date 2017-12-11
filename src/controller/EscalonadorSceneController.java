@@ -269,8 +269,10 @@ public class EscalonadorSceneController implements Initializable {
     }
 
     private void verificarStatusBotaoIniciar() {
-        if (!Config.SJF_IS_RUNNING)
+        if (!Config.SJF_IS_RUNNING) {
             iniciarSjfButton.setDisable(false);
+            iniciarSjfButtonQ.setDisable(false);
+        }
     }
 
 
@@ -418,6 +420,8 @@ public class EscalonadorSceneController implements Initializable {
     @FXML
     Button iniciarRrButton;
     @FXML
+    Button iniciarRrButtonQ;
+    @FXML
     Button addProcessoRrButton;
 
     @FXML
@@ -443,6 +447,7 @@ public class EscalonadorSceneController implements Initializable {
     public void iniciarRr() {
 
         iniciarRrButton.setDisable(true);
+        iniciarRrButtonQ.setDisable(true);
         paneRr.setExpanded(true);
         addProcessoRrButton.setDisable(false);
         rr = new Rr((int) coresRrSlider.getValue(), (int) piRrSlider.getValue(), (int) quantumRrSlider.getValue(), (int) memoriaRrSlider.getValue());
@@ -484,11 +489,79 @@ public class EscalonadorSceneController implements Initializable {
 
     }
 
+    public void iniciarRrQ() {
+
+        iniciarRrButton.setDisable(true);
+        iniciarRrButtonQ.setDisable(true);
+        paneRr.setExpanded(true);
+        addProcessoRrButton.setDisable(false);
+        rr = new Rr((int) coresRrSlider.getValue(), (int) piRrSlider.getValue(), (int) quantumRrSlider.getValue(), (int) memoriaRrSlider.getValue(), 20, 4);
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (Config.RR_IS_RUNNING) {
+                    rr.atualizarAlgoritmo();
+
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            coresRr = rr.getCores();
+                            aptosRr = rr.getAptos();
+                            p0 = rr.getP0();
+                            p1 = rr.getP1();
+                            p2 = rr.getP2();
+                            p3 = rr.getP3();
+                            finalizadosRr = rr.getFinalizados();
+                            abortadosRr = rr.getAbortados();
+                            atualizarInterfaceRr();
+                            if (paneRr.isExpanded()){
+                                printMemoriaDoRrQ();
+                            }
+                        }
+                    });
+                    verificarStatusBotaoIniciarRr();
+                    try {
+                        Thread.sleep(Config.SEGUNDO);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        thread.start();
+
+    }
+
     private void printMemoriaDoRr(){
         Memoria m = rr.getMemoria();
         nameMemoria.setText("Memória RR BestFit (" + m.getTamanho() + "kb)");
 
         memoria.getChildren().clear();
+        for (Bloco b :
+                m.getBlocos()) {
+            memoria.getChildren().add(view.Memoria.displayBloco(b));
+        }
+        memoria.getChildren().add(view.Memoria.displayMemoriaNaoAlocada(m.getMemoriaLivre()));
+
+    }
+
+    private void printMemoriaDoRrQ(){
+        Memoria m = rr.getMemoria();
+        nameMemoria.setText("Memória RR QuickFit (" + m.getTamanho() + "kb)");
+
+        memoria.getChildren().clear();
+        if(m.listas!= null)
+            for(ListasQF lista: m.listas){
+                if(lista!= null){
+                    for (Bloco b :
+                            lista.getBloco()) {
+                        memoria.getChildren().add(view.Memoria.displayBlocoComCor(b, lista.getR(), lista.getG(), lista.getB()));
+                    }
+                }
+            }
+
         for (Bloco b :
                 m.getBlocos()) {
             memoria.getChildren().add(view.Memoria.displayBloco(b));
@@ -549,8 +622,10 @@ public class EscalonadorSceneController implements Initializable {
     }
 
     private void verificarStatusBotaoIniciarRr() {
-        if (!Config.RR_IS_RUNNING)
+        if (!Config.RR_IS_RUNNING) {
             iniciarRrButton.setDisable(false);
+            iniciarRrButtonQ.setDisable(false);
+        }
     }
 
     //IBS Algoritmo
