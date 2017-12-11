@@ -361,28 +361,15 @@
       <top>
         <TitledPane id="idNameMemoria" fx:id="nameMemoria" animated="false" collapsible="false" expanded="true" prefHeight="150.0" prefWidth="-1.0" text="Memória">
           <content>
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-              <tabs>
-                <Tab text="Best Fit">
-                  <content>
-                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                      <content>
-                        <HBox fx:id="memoria" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
-                          <padding>
-                            <Insets left="5.0" right="5.0" top="5.0" />
-                          </padding>
-                        </HBox>
-                      </content>
-                    </ScrollPane>
-                  </content>
-                </Tab>
-                <Tab text="Quick Fit">
-                  <content>
-                    <HBox fx:id="memoriaQf" prefHeight="100.0" prefWidth="200.0" />
-                  </content>
-                </Tab>
-              </tabs>
-            </TabPane>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+              <content>
+                <HBox fx:id="memoria" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
+                  <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x2" />
+                  </padding>
+                </HBox>
+              </content>
+            </ScrollPane>
           </content>
         </TitledPane>
       </top>

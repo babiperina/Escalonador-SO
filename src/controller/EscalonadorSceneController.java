@@ -140,10 +140,22 @@ public class EscalonadorSceneController implements Initializable {
         nameMemoria.setText("Memória SJF (" + m.getTamanho() + "kb)");
 
         memoria.getChildren().clear();
+        for(ListasQF lista: m.listas){
+            if(lista!= null){
+                for (Bloco b :
+                        lista.getBloco()) {
+                    memoria.getChildren().add(view.Memoria.displayBlocoComCor(b, lista.getR(), lista.getG(), lista.getB()));
+                }
+            }
+        }
+
         for (Bloco b :
                 m.getBlocos()) {
             memoria.getChildren().add(view.Memoria.displayBloco(b));
         }
+
+
+
         memoria.getChildren().add(view.Memoria.displayMemoriaNaoAlocada(m.getMemoriaLivre()));
 
     }
